@@ -2,7 +2,6 @@ DROP DATABASE IF EXISTS collabhub;
 CREATE DATABASE collabhub;
 
 CREATE TABLE user (
-  id INT NOT NULL AUTO_INCREMENT,
   fName VARCHAR(200) NOT NULL,
   lName VARCHAR(200) NOT NULL,
   emailAddress VARCHAR(200) NOT NULL,
@@ -11,7 +10,6 @@ CREATE TABLE user (
   state VARCHAR(2),
   zip VARCHAR(5),
   bio TEXT,
-  PRIMARY KEY (id)
 );
 
 -- DROP DATABASE IF EXISTS skills;
