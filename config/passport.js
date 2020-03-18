@@ -22,8 +22,8 @@ module.exports = function (passport) {
         passwordField: "account_key",
         passReqToCallback: true
     },
-        (req, email, account_key, done) => {
-            process.nextTick(() => {
+        function (req, email, account_key, done) {
+            process.nextTick(function () {
                 db.Accounts.findOne({
                     where: {
                         email: email
@@ -41,13 +41,13 @@ module.exports = function (passport) {
                             //@HACER change fields accordingly
                             first_name: req.body.first_name,
                             last_name: req.body.last_name,
-                            street: req.body.street,
+                            //street: req.body.street,
                             city: req.body.city,
                             state: req.body.state,
                             zip: req.body.zip,
-                            balance: req.body.balance,
+                            //balance: req.body.balance,
                             email: req.body.email,
-                            phone: req.body.phone,
+                            //phone: req.body.phone,
                             account_key: db.Accounts.generateHash(account_key)
 
                         }).then(function (dbUser) {
@@ -55,7 +55,9 @@ module.exports = function (passport) {
 
                             return done(null, dbUser);
 
-                        }).catch(function (err) { console.log(err); });
+                        }).catch(function (err) {
+                            console.log(err);
+                        });
                     }
                 });
             });
@@ -65,22 +67,21 @@ module.exports = function (passport) {
         usernameField: "email",
         passwordField: "account_key",
         passReqToCallback: true
-    }, (req, email, account_key, done) => { 
+    }, function (req, email, account_key, done) {
         db.Accounts.findOne({
             where: {
-                email: req.body.email 
+                email: req.body.email
             }
-        }).then( (user, err) => {
+        }).then((user, err) => {
             (!user.validPassword(req.body.account_key));
-            if (!user){
+            if (!user) {
                 console.log("no user found");
-                return done(null, false, req.flash('loginMessage', 'No user found.')); 
+                return done(null, false, req.flash('loginMessage', 'No user found.'));
             }
-            if (user && !user.validPassword(req.body.account_key)){
-            return done(null, false, req.flash('loginMessage', 'Oops! Wrong password.')); 
+            if (user && !user.validPassword(req.body.account_key)) {
+                return done(null, false, req.flash('loginMessage', 'Oops! Wrong password.'));
             }
             return done(null, user);
         });
     }));
-
 };

@@ -23,13 +23,6 @@ module.exports = function (sequelize, DataTypes) {
                 len: [1, 30]
             }
         },
-        street: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            validate: {
-                len: [1, 30]
-            }
-        },
         city: {
             type: DataTypes.STRING,
             allowNull: false,
@@ -51,22 +44,11 @@ module.exports = function (sequelize, DataTypes) {
                 len: [5]
             }
         },
-        balance: {
-            type: DataTypes.DECIMAL(12, 2),
-            defaultValue: 0
-        },
         email: {
             type: DataTypes.STRING,
             allowNull: false,
             validate: {
                 len: [1, 100]
-            }
-        },
-        phone: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            validate: {
-                len: [10]
             }
         },
         account_key: {
@@ -76,8 +58,6 @@ module.exports = function (sequelize, DataTypes) {
                 len: [8]
             }
         }
-
-
     })
     // methods ======================
     // generating a hash
