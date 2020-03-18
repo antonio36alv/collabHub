@@ -6,7 +6,7 @@ var db = require("./models");
 
 //need for user auth.
 var bodyParser = require("body-parser");
-var passport = require('passport');
+var passport = require("passport");
 var flash = require('connect-flash');
 var cookieParser = require('cookie-parser');
 var session = require('express-session'); 
@@ -53,10 +53,8 @@ app.use(flash());
 require("./routes/apiRoutes")(app, passport);
 require("./routes/htmlRoutes")(app, passport);
 require("./routes/user-auth-routes")(app, passport);
-require("./controllers/account-controller")(app, passport);
-require("./controllers/item-controller")(app, passport);
-require("./controllers/search-controller")(app, passport);
-require("./controllers/transactions-controller")(app, passport);
+require("./controllers/accountController")(app, passport);
+// require("./controllers/search-controller")(app, passport); @ODOT
 
 var syncOptions = { force: false };
 
