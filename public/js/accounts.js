@@ -19,6 +19,17 @@ $("#add-account").on("click", function (event) {
 
   };
 
+
+  /*
+
+
+BIO
+
+SKILLS
+
+PICTURE
+
+  */
   if (newAccount.account_key.length > 0 && newAccount.email.length > 0 && newAccount.zip.length > 0 && newAccount.state.length > 0 && newAccount.city.length > 0 && newAccount.account_key.length > 0 && newAccount.last_name.length > 0 && newAccount.first_name.length > 0) {
     $.ajax({
       type: "post",
