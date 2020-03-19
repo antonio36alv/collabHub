@@ -5,30 +5,18 @@ module.exports = function(app){
                 id: req.session.passport.user,
                 isloggedin: req.isAuthenticated()
             }
-            res.render("home", user);
+            res.render("bsprofile", user);
         }
         else{
-            res.render("home");
+            res.render("login");
         }
     })
-
-    app.get("/list-items", function(req,res){
-        res.render("search");
-    });
 
     app.get("/signup", function(req,res){
         if(req.isAuthenticated()){
-            res.redirect("/acounts/view");
+            res.redirect("/bsprofile");
         }else{
-           res.render("accounts"); 
+           res.render("signup"); 
         }
     });
-
-    app.get("/add-items", function(req, res){
-        if(req.isAuthenticated()){
-            res.render("add-items");
-        }else {
-            res.redirect()
-        }
-    })
 };

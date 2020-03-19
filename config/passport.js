@@ -8,7 +8,7 @@ module.exports = function (passport) {
     });
 
     passport.deserializeUser(function (uuid, done) {
-        db.Accounts.findById(uuid).then(function (user) {
+        db.Accounts.findByPk(uuid).then(function (user) {
             if (user) {
                 done(null, user.get());
             } else {
@@ -73,7 +73,7 @@ module.exports = function (passport) {
                 email: req.body.email
             }
         }).then((user, err) => {
-            (!user.validPassword(req.body.account_key));
+            // (!user.validPassword(req.body.account_key));
             if (!user) {
                 console.log("no user found");
                 return done(null, false, req.flash('loginMessage', 'No user found.'));

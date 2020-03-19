@@ -4,11 +4,11 @@ var passport = require('passport');
 
 module.exports = function (app) {
 
-    app.get("/signup", function (req, res) {
-        res.render("accounts");
-    });
+    // app.get("/signup", function (req, res) {
+    //     res.render("accounts");
+    // });
 
-    app.get("/accounts/view", function (req, res) {
+    app.get("/bsprofile", function (req, res) {
         console.log("%%%%%%%%% is logged in", req.isAuthenticated());
 
         if (req.isAuthenticated()) {
@@ -23,7 +23,7 @@ module.exports = function (app) {
                     id: req.session.passport.user,
                     isloggedin: req.isAuthenticated()
                 }
-                res.render("view-account", user);
+                res.render("bsprofile", user);
             })
         }
         else {
@@ -31,7 +31,7 @@ module.exports = function (app) {
                 id: null,
                 isloggedin: req.isAuthenticated()
             }
-            res.redirect("/");
+            res.redirect("/bsprofile");//og had redirect("/")
         }
 
     });
@@ -65,7 +65,7 @@ module.exports = function (app) {
                 console.log('redirecting....');
                 res.cookie('first_name', user.first_name);
                 res.cookie('user_id', user.uuid);
-                return res.redirect("/accounts/view");
+                return res.redirect("/bsprofile");
             });
         })(req, res, next);
     });
@@ -91,8 +91,7 @@ module.exports = function (app) {
                 res.cookie('first_name', user.first_name);
                 res.cookie('user_id', user.uuid);
 
-                return res.json(true);
-
+                return res.redirect("/bsprofile");
             });
         })(req, res, next);
     });
