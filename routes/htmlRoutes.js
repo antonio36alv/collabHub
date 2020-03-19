@@ -15,14 +15,12 @@ module.exports = function(app) {
       where : {
           email: req.params.email
       }
-    }).then( (err, user) => {
+    }).then( user => {
     
-      // console.log(data)
+      console.log(user.dataValues)
       console.log("did this happen?")
       return res.render("bsprofile", user)
     })
-    //find appropiate user via email
-    //
   })
 //   app.get("/signup", function(req,res){
 //     if(req.isAuthenticated()){
