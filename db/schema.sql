@@ -10,6 +10,7 @@ CREATE TABLE user (
   state VARCHAR(2),
   zip VARCHAR(5),
   bio TEXT,
+  photo IMAGE,
 );
 
 -- DROP DATABASE IF EXISTS skills;

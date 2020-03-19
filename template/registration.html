@@ -20,7 +20,7 @@
             font-family: 'Times New Roman', Times, serif;
             font-size: 20px;
             background-position: center;
-            min-height: 180px;
+            min-height: 100px;
         }
 
         .brand-logo {
@@ -40,12 +40,12 @@
         .id {
             font-family: 'Times New Roman', Times, serif;
         }
+        .card-title {
+            color: orange;
+            text-emphasis: bold;
+        }
+       
     </style>
-
-    <script
-    src="https://code.jquery.com/jquery-3.4.1.js"
-    integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-    crossorigin="anonymous"></script>
 
 </head>
 
@@ -62,64 +62,44 @@
                     <li><a href="collapsible.html">Search</a></li>
                     <li><a href="mobile.html">Mobile</a></li>
                 </ul>
-                <br style="line-height:0px;" />
+                <!-- <br style="line-height:0px;" />
                 <ul class="slogan" class="center hide-on-med-and-down">
                     <h2> Connecting Talents </h2>
                 </ul>
+    </nav> -->
+
+    <br>
+    <br>
+    
+    <!-- Registration card here -->
+    <div class="container">
+        <div class="row">
+          <div class="col s12 m12 l12 ">
+            <div class="card">
+              <div class="card-content">
+                <span class="card-title">USER INFORMATION</span>
+              </div>
+              <div class="card-action">
+                <a href="">First Name: </a>
+              </div>
+              <div class="card-action">
+                <a href="">Last Name: </a>
                 </div>
-        </div>
-    </nav>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    
-    {{{ body }}}
-    
-    
-    <script type="text/javascript" src="js/accounts.js"></script>
-    <script>
+                <div class="card-action">
+                    <a href="">Industry/Interest: </a>
+                    </div>
+                    <div class="card-action">
+                        <a href="">City: </a>
+                        </div>
+                        <div class="card-action">
+                            <a href="">State: </a>
+                            </div>
+                            <div class="card-action">
+                                <a href="">Zip Code:</a>
+                                </div>
+          </div>
+          
 
-$("#login").on("click", function (event) {
-  event.preventDefault();
-//create user object via email and password input
-  var user = {
-    email: $("#email").val().trim(),
-    account_key: $("#password").val().trim()
-  }
-  
-  $.get("/bsprofile", user, function(results){
-    if(results){
-        //console.log(results)
-
-let callURL = "/bsprofile/" + user.email
-        
-        $.ajax({
-            url: callURL,
-            type: "GET"
-        }).then( data => {
-        console.log("leedle")
-            //console.log(`Received ${data}`)
-            //console.log("finished get bsprofile")
-            //$(location).attr("href", "/bsprofile")
-            //$(location).attr('href', "/bsprofile")
-            $(location).attr('href', data)
-        })
-     } else {
-         
-      //$("#account-info").modal("close");
-      //document.write("no bueno")
-      alert("oops something went wrong, please try again!");
-
-       //$(location).attr('href', "./login")
-     }
-   
-  })
-
-});
-    </script>
 </body>
 
 </html>
