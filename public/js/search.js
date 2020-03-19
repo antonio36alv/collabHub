@@ -7,6 +7,9 @@ var PORT = process.env.PORT || 8080;
 $("#SEARCHBUTTONID").on("click", function() {
   event.preventDefault();
 
+
+
+
 // var skillSearch = function() {
 //     return $.ajax({
 //       url: "api/examples",
@@ -14,17 +17,16 @@ $("#SEARCHBUTTONID").on("click", function() {
 //     });
 // };
 
-  var skillSearch = $("#eventInput").val().trim();
-  //Ye
+  // var skillSearch = $("#eventInput").val().trim();
   
-  $.ajax({
-      url: yelpURL,
-      method: "GET",
-      headers: {
-          Authorization: "Bearer l4dXS90kQrRBL2LozspYQ6nqfKa1tcrm7lgZuh3sGm7pFPp4cMPhbFqtZDuB9OqgrAvFbnrDGoDfrGJWTqquDaNQiHdvU1XWKPVMtkFvghvKFFVr7NNrwOkPUl9NXnYx",
-      },
-      dataType: "json"
-  })
+  // $.ajax({
+  //     url: yelpURL,
+  //     method: "GET",
+  //     headers: {
+  //         Authorization: "Bearer l4dXS90kQrRBL2LozspYQ6nqfKa1tcrm7lgZuh3sGm7pFPp4cMPhbFqtZDuB9OqgrAvFbnrDGoDfrGJWTqquDaNQiHdvU1XWKPVMtkFvghvKFFVr7NNrwOkPUl9NXnYx",
+  //     },
+  //     dataType: "json"
+  // })
   
   // .then(function(response) {
   //     //console.log(response);
