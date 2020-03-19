@@ -1,7 +1,9 @@
-{
+const connection
+
+connect = {
   "development": {
-    "username": "root",
-    "password": "bobLOB19/*",
+    "username": process.env.MYSQL_USER,
+    "password": process.env.MYSQL_PASS,
     "database": "collabhub",
     "host": "localhost",
     "dialect": "mysql"
@@ -19,3 +21,5 @@
     "dialect": "mysql"
   }
 }
+
+module.exports = connection
