@@ -1,17 +1,17 @@
 DROP DATABASE IF EXISTS collabhub;
 CREATE DATABASE collabhub;
 
-CREATE TABLE user (
-  fName VARCHAR(200) NOT NULL,
-  lName VARCHAR(200) NOT NULL,
-  emailAddress VARCHAR(200) NOT NULL,
---   skills dropdown
-  city VARCHAR(30),
-  state VARCHAR(2),
-  zip VARCHAR(5),
-  bio TEXT,
-  photo IMAGE,
-);
+-- CREATE TABLE user (
+--   fName VARCHAR(200) NOT NULL,
+--   lName VARCHAR(200) NOT NULL,
+--   emailAddress VARCHAR(200) NOT NULL,
+-- --   skills dropdown
+--   city VARCHAR(30),
+--   state VARCHAR(2),
+--   zip VARCHAR(5),
+--   bio TEXT,
+--   photo IMAGE,
+-- );
 
 -- DROP DATABASE IF EXISTS skills;
 -- CREATE DATABASE skills;
