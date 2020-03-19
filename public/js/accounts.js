@@ -1,6 +1,4 @@
-
 console.log("Accounts.js loaded");
-
 
 // ADD    ****************
 $("#add-account").on("click", function (event) {
@@ -18,17 +16,10 @@ $("#add-account").on("click", function (event) {
     account_key: $("#inputPassword").val().trim()
 
   };
-
-
   /*
-
-
-BIO
-
-SKILLS
-
-PICTURE
-
+  BIO
+  SKILLS
+  PICTURE
   */
   if (newAccount.account_key.length > 0 && newAccount.email.length > 0 && newAccount.zip.length > 0 && newAccount.state.length > 0 && newAccount.city.length > 0 && newAccount.account_key.length > 0 && newAccount.last_name.length > 0 && newAccount.first_name.length > 0) {
     $.ajax({
@@ -38,7 +29,7 @@ PICTURE
     }).then(function (data) {
       window.location.href = "/"
     });
-  }else {
+  } else {
     console.log("**Please fill out entire form**");
     $("#create-err-msg").empty("").text("**Please fill out entire form**");
   }
@@ -62,7 +53,7 @@ PICTURE
 //   $("#err-msg").empty("");
 //   // $("#change-account-modal").modal("show");
 //   console.log(changeAccount);
-  
+
 
 
 //   if (changeAccount.account_id.length > 0 && changeAccount.account_key.length > 0 && changeAccount.phone.length > 0 && changeAccount.email.length > 0 && changeAccount.balance.length > 0 && changeAccount.zip.length > 0 && changeAccount.state.length > 0 && changeAccount.city.length > 0 && changeAccount.street.length > 0 && changeAccount.account_key.length > 0 && changeAccount.last_name.length > 0 && changeAccount.first_name.length > 0){
@@ -108,12 +99,11 @@ $("#confirm-delete").on("click", function (event) {
         // Reload the page to get the updated list
         location.reload();
       }
-      
+
     );
   } else {
     console.log("fill out entire form");
     $("#err-msg").empty("").text("fill out entire form");
   }
-
 });
 */
