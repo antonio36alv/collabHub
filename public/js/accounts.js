@@ -6,7 +6,7 @@ console.log("Accounts.js loaded");
 $("#add-account").on("click", function (event) {
   event.preventDefault();
 
-  console.log("Entere'd add account button.")
+  console.log("Entered add account button.")
   // make a newAccount obj
   var newAccount = {
     first_name: $("#inputFirst").val().trim(),
@@ -15,8 +15,8 @@ $("#add-account").on("click", function (event) {
     state: $("#inputState").val().trim(),
     zip: $("#inputZip").val().trim(),
     email: $("#inputEmail").val().trim(),
-    account_key: $("#inputPassword").val().trim()
-
+    account_key: $("#inputPassword").val().trim(),
+    skills: $("select").val(),
   };
 
 
