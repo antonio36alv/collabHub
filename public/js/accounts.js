@@ -18,8 +18,7 @@ $("#add-account").on("click", function (event) {
     account_key: $("#inputPassword").val().trim(),
     skills: $("select").val(),
   };
-
-
+  
   /*
 
 

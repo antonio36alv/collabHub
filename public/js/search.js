@@ -8,8 +8,6 @@ $("#SEARCHBUTTONID").on("click", function() {
   event.preventDefault();
 
 
-
-
 // var skillSearch = function() {
 //     return $.ajax({
 //       url: "api/examples",
