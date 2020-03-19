@@ -4,7 +4,7 @@ module.exports = {
   "development": {
     "username": "root",
     "password": process.env.MYSQL_PASS,
-    "database": "exampledb",
+    "database": "collabhub",
     "host": "localhost",
     "dialect": "mysql"
   },
