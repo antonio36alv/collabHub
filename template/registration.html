@@ -51,52 +51,79 @@
 
 <body>
 
-    <nav>
-        <div class="nav-wrapper">
-            <div class="row">
-                <a href="#!" class="brand-logo"> <i class="fab fa-connectdevelop"></i> collabify</a>
-                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-                <ul class="right hide-on-med-and-down">
-                    <li><a href="sass.html">Home</a></li>
-                    <li><a href="badges.html">Login</a></li>
-                    <li><a href="collapsible.html">Search</a></li>
-                    <li><a href="mobile.html">Mobile</a></li>
-                </ul>
-                <!-- <br style="line-height:0px;" />
-                <ul class="slogan" class="center hide-on-med-and-down">
-                    <h2> Connecting Talents </h2>
-                </ul>
-    </nav> -->
-
-    <br>
-    <br>
     
-    <!-- Registration card here -->
-    <div class="container">
-        <div class="row">
-          <div class="col s12 m12 l12 ">
-            <div class="card">
-              <div class="card-content">
-                <span class="card-title">USER INFORMATION</span>
-              </div>
-              <div class="card-action">
-                <a href="">First Name: </a>
-              </div>
-              <div class="card-action">
-                <a href="">Last Name: </a>
-                </div>
-                <div class="card-action">
-                    <a href="">Industry/Interest: </a>
+    <form name="myForm" action="user/signup" method="post">
+
+        <div class="container" id="mainsignup">
+            <h3>Sign Up</h3>
+            <div class="colum1">
+                <div class="row">
+                    <div class="input-field col s6">
+                        First Name:
+                        <input id="inputFirst" type="text" class="validate" name="firstName" required>
+                        <label for="first_name"></label>
                     </div>
-                    <div class="card-action">
-                        <a href="">City: </a>
-                        </div>
-                        <div class="card-action">
-                            <a href="">State: </a>
-                            </div>
-                            <div class="card-action">
-                                <a href="">Zip Code:</a>
-                                </div>
+                    <div class="input-field col s6">
+                        Last Name:
+                        <input id="inputLast" type="text" class="validate" name="lastName" required>
+                        <label for="last_name"></label>
+                    </div>
+                    <div class="input-field col s6">
+                        City:
+                        <input id="inputCity" type="text" class="validate" name="city" required>
+                        <label for="city"></label>
+                    </div>
+                    <div class="input-field col s6">
+                        State:
+                        <input id="inputState" type="text" class="validate" name="state" required>
+                        <label for="state"></label>
+                    </div>
+                   
+                </div>
+            </div>
+            <div class="colum">
+                <div class="row">
+                    <div class="input-field col s6">
+                        Zip:
+                        <input id="inputZip" type="text" class="validate" name="zip" required>
+                        <label for="zip"></label>
+                    </div>
+                     <div class="input-field col s6">
+                        Email:
+                        <input id="inputEmail" type="text" class="validate" name="email" required>
+                        <label for="email"></label>
+                    </div>
+                    
+                </div>
+                
+                <div class="row">
+                    <div class="input-field col s6">
+                        Password:
+                        <input id="inputPassword" type="text" class="validate" name="password" required>
+                        <label for="password"></label>
+                    </div>
+                    <div class="input-field col s6">
+                        Skills/Talents:
+                        <input id="inputSkills" type="text" class="validate" name="skills" required>
+                        <label for="skills"></label>
+                    </div>
+                    <div class=" col s6">
+                        Bio:
+                        <input id="inputBio"  type="textbox" style="font-size:15pt;height:200px;width:930px;"  name="Bio" required>
+                        
+                    </div>
+
+                    
+                </div>
+
+                <div class="row">
+                    <div class="col s12">
+                    </div>
+                    <input class="btn" id="add-account" type="submit" value="Submit">
+                </div>
+            </div>
+        </div>
+    </form>
 
         <!-- Two additional fields to add to sign up -->
                                 <!-- <div class="card-action input-field"> -->
