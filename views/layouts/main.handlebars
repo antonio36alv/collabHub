@@ -59,9 +59,10 @@
                 <ul class="right hide-on-med-and-down">
                     <li><a href="sass.html">Home</a></li>
                     <li><a href="badges.html">Login</a></li>
-                    <li><a href="badges.html">Signup</a></li>
+                    <li><a href="badges.html">Sign-up</a></li>
+                     <li><a href="log-out.html">Logout</a></li>
                     <li><a href="collapsible.html">Search</a></li>
-                    <li><a href="mobile.html">Mobile</a></li>
+                   
                 </ul>
                 <br style="line-height:0px;" />
                 <ul class="slogan" class="center hide-on-med-and-down">
@@ -73,8 +74,12 @@
     
     {{{ body }}}
     
+<<<<<<< HEAD
     
     {{!-- <script type="text/javascript" src="/js/accounts.js"></script>
+=======
+        
+>>>>>>> 426678254b5f8e7fa9d6200653d8730d6cbac075
     <script>
 
 $("#login").on("click", function (event) {
@@ -85,34 +90,14 @@ $("#login").on("click", function (event) {
     account_key: $("#password").val().trim()
   }
   
-  $.get("/bsprofile", user, function(results){
+  $.post("/login", user, function(results){
     if(results){
-        //console.log(results)
-
-let callURL = "/bsprofile/" + user.email
-        
-        $.ajax({
-            url: callURL,
-            type: "GET"
-        }).then( data => {
-        console.log("leedle")
-            //console.log(`Received ${data}`)
-            //console.log("finished get bsprofile")
-            //$(location).attr("href", "/bsprofile")
-            //$(location).attr('href', "/bsprofile")
-            $(location).attr('href', data)
-        })
-     } else {
-         
-      //$("#account-info").modal("close");
-      //document.write("no bueno")
+       $(location).attr('href', '/profile')
+     }else {
+      $("#account-info").modal("close");
       alert("oops something went wrong, please try again!");
-
-       //$(location).attr('href', "./login")
      }
-   
   })
-
 });
     </script> --}}
 </body>
