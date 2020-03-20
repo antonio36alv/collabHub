@@ -1,12 +1,9 @@
 <h1>HEADING</h1>
-{{user.userInfo}}
-{{user.userInfo.city}}
-{{userInfo}}
-{{userInfo.dataValues}}
-
+{{userInfo.last_name}}
 {{userInfo.city}}
-
-{{userInfo.first_name}}
+{{userInfo.state}}
+{{userInfo.zip}}
+{{userInfo.email}}
 
  <div class="container">
     <h2>PROFILE</h2>
@@ -20,7 +17,7 @@
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit..</p>
           </div>
           <div class="card-action">
-            <a href="">MY NAME XYZ</a>
+            <p>{{userInfo.first_name}}</p>
             
           </div>
         </div>
