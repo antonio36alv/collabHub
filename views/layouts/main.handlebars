@@ -94,9 +94,9 @@ $("#login").on("click", function (event) {
     //if(results){
         //console.log(results)
 
-let callURL = "/bsprofile"///" + user.email
+//let callURL = "/bsprofile"///" + user.email
         
-        $.ajax({
+/*        $.ajax({
             url: callURL,
             type: "POST",
             data: {email: user.email}
@@ -106,20 +106,29 @@ let callURL = "/bsprofile"///" + user.email
         //response from ajax calls gives me signup html?
         console.log("glemfarks"+data)
 
-            //console.log(`Received ${data}`)
-            //console.log("finished get bsprofile")
-            $(location).attr("href", data)
+            $(location).attr("href", data)*/
             //$(location).attr('href', "/bsprofile")
             //$(location).attr('href', "/bsprofile/" + user.email)
-        })
+    //    })
    //  } else {
          
       //$("#account-info").modal("close");
       //document.write("no bueno")
-      alert("oops something went wrong, please try again!");
+  //    alert("oops something went wrong, please try again!");
 
        //$(location).attr('href', "./login")
  //    }
+
+    $.post("/login", user, results => {
+        if(resulsts) $(location).atrr("href", "/bsprofile")
+        else {
+            //$("")
+            alert("oops something went wrong, please try again!");
+        }
+    })
+
+
+  
    
   })
 
