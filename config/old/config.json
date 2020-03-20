@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "bobLOB19/*",
+    "password": "",
     "database": "collabhub",
     "host": "localhost",
     "dialect": "mysql"
