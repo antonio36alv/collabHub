@@ -79,7 +79,7 @@
     {{{ body }}}
     
     
-    <script type="text/javascript" src="js/accounts.js"></script>
+    
     <script>
 
 $("#login").on("click", function (event) {
@@ -90,31 +90,14 @@ $("#login").on("click", function (event) {
     account_key: $("#password").val().trim()
   }
   
-  $.get("/bsprofile", user, function(results){
+  $.post("/login", user, function(results){
     if(results){
-        //console.log(results)
-
-let callURL = "/bsprofile/" + user.email
-        
-        $.ajax({
-            url: callURL,
-            type: "GET"
-        }).then( data => {
-        console.log(`leedle ${data} how did she get there`)
-
-            {{!-- $(location).attr('href', "/bsprofile") --}}
-        })
-     } else {
-         
-      //$("#account-info").modal("close");
-      //document.write("no bueno")
-    alert("oops something went wrong, please try again!");
-
-       //$(location).attr('href', "./login")
+       $(location).attr('href', '/bsprofile')
+     }else {
+      $("#account-info").modal("close");
+      alert("oops something went wrong, please try again!");
      }
-   
   })
-
 });
     </script>
 </body>
