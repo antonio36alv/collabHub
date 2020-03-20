@@ -79,7 +79,7 @@
     {{{ body }}}
     
     
-    
+    <script type="text/javascript" src="js/accounts.js"></script>
     <script>
 
 $("#login").on("click", function (event) {
@@ -90,49 +90,32 @@ $("#login").on("click", function (event) {
     account_key: $("#password").val().trim()
   }
   
-  //$.post("/bsprofile", function(results){
-    //if(results){
+  $.get("/bsprofile", user, function(results){
+    if(results){
         //console.log(results)
 
-//let callURL = "/bsprofile"///" + user.email
+let callURL = "/bsprofile/" + user.email
         
-/*        $.ajax({
+        $.ajax({
             url: callURL,
-            type: "POST",
-            data: {email: user.email}
+            type: "GET"
         }).then( data => {
-        console.log("leedle")
+        console.log(`leedle ${data} how did she get there`)
 
-        //response from ajax calls gives me signup html?
-        console.log("glemfarks"+data)
-
-            $(location).attr("href", data)*/
-            //$(location).attr('href', "/bsprofile")
-            //$(location).attr('href', "/bsprofile/" + user.email)
-    //    })
-   //  } else {
+            {{!-- $(location).attr('href', "/bsprofile") --}}
+        })
+     } else {
          
       //$("#account-info").modal("close");
       //document.write("no bueno")
-  //    alert("oops something went wrong, please try again!");
+    alert("oops something went wrong, please try again!");
 
        //$(location).attr('href', "./login")
- //    }
-
-    $.post("/login", user, results => {
-        if(resulsts) $(location).atrr("href", "/bsprofile")
-        else {
-            //$("")
-            alert("oops something went wrong, please try again!");
-        }
-    })
-
-
-  
+     }
    
   })
 
-//});
+});
     </script>
 </body>
 
