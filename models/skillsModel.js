@@ -57,10 +57,6 @@ module.exports = function (sequelize, DataTypes) {
             validate: {
                 len: [8]
             }
-        },
-        skills: {
-            type: DataTypes.ARRAY(DataTypes.STRING),
-            required: true,
         }
     })
     // methods ======================
@@ -75,5 +71,3 @@ module.exports = function (sequelize, DataTypes) {
     };
     return Accounts;
 }
-
-
