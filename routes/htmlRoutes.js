@@ -7,7 +7,7 @@ module.exports = function(app) {
   })
 /************************************************************ */ 
 
-  app.get("/bsprofile", async (req, res) => {
+  app.get("/profile", async (req, res) => {
 
     console.log("%%%%%%%%% is logged in", req.isAuthenticated());
     if(req.isAuthenticated()){
@@ -22,7 +22,7 @@ module.exports = function(app) {
           id: req.session.passport.user,
           isloggedin: req.isAuthenticated()
         }
-        res.render("bsprofile", user);//maybe change
+        res.render("profile", user);//maybe change
       })
     }
     else {
@@ -33,11 +33,6 @@ module.exports = function(app) {
       res.redirect("/");
     }
 });
-
-
-app.get("/profile", (req, res) => {
-  res.render("profile")
-})
 
   app.get("*", (req, res) => {
     res.render("login")

@@ -86,7 +86,7 @@ $("#login").on("click", function (event) {
   
   $.post("/login", user, function(results){
     if(results){
-       $(location).attr('href', '/bsprofile')
+       $(location).attr('href', '/profile')
      }else {
       $("#account-info").modal("close");
       alert("oops something went wrong, please try again!");

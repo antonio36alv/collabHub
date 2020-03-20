@@ -7,7 +7,7 @@ module.exports = function(app){
                 id: req.session.passport.user,
                 isloggedin: req.isAuthenticated()
             }
-            res.render("bsprofile", user);
+            res.render("profile", user);
         }
         else{
             res.render("login");
@@ -16,7 +16,7 @@ module.exports = function(app){
 
     app.get("/signup", function(req,res){
         if(req.isAuthenticated()){
-            res.redirect("/bsprofile");
+            res.redirect("/profile");
         }else{
            res.render("signup"); 
         }
