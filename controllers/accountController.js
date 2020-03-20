@@ -8,6 +8,7 @@ module.exports = function (app) {
     //     res.render("accounts");
     // });
 
+<<<<<<< HEAD
     // Index Home Page Render
     app.get("/", function(req, res) {
         if(req.isAuthenticated()){
@@ -23,6 +24,9 @@ module.exports = function (app) {
       });
   
     app.get("/bsprofile", function (req, res) {
+=======
+    app.get("/profile", function (req, res) {
+>>>>>>> 27561f383c545db98f77ca9cc3530b0bda077361
         console.log("%%%%%%%%% is logged in", req.isAuthenticated());
 
         if (req.isAuthenticated()) {
@@ -37,7 +41,7 @@ module.exports = function (app) {
                     id: req.session.passport.user,
                     isloggedin: req.isAuthenticated()
                 }
-                res.render("bsprofile", user);
+                res.render("profile", user);
             })
         }
         else {
@@ -45,7 +49,7 @@ module.exports = function (app) {
                 id: null,
                 isloggedin: req.isAuthenticated()
             }
-            res.redirect("/bsprofile");//og had redirect("/")
+            res.redirect("/profile");//og had redirect("/")
         }
 
     });
@@ -79,7 +83,7 @@ module.exports = function (app) {
                 console.log('redirecting....');
                 res.cookie('first_name', user.first_name);
                 res.cookie('user_id', user.uuid);
-                return res.redirect("/bsprofile");
+                return res.redirect("/profile");
             });
         })(req, res, next);
     });
@@ -105,7 +109,7 @@ module.exports = function (app) {
                 res.cookie('first_name', user.first_name);
                 res.cookie('user_id', user.uuid);
 
-                return res.redirect("/bsprofile");
+                return res.redirect("/profile");
             });
         })(req, res, next);
     });

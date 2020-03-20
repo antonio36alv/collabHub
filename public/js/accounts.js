@@ -4,7 +4,6 @@ $(document).ready(function(){
     const skills = $("select").val();
     console.log(skills);
   });
-});
 
 console.log("Accounts.js loaded");
 
@@ -113,3 +112,4 @@ $("#confirm-delete").on("click", function (event) {
   }
 });
 */
+});
