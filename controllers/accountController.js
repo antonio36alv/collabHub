@@ -8,7 +8,7 @@ module.exports = function (app) {
     //     res.render("accounts");
     // });
 
-    app.get("/bsprofile", function (req, res) {
+    app.get("/profile", function (req, res) {
         console.log("%%%%%%%%% is logged in", req.isAuthenticated());
 
         if (req.isAuthenticated()) {
@@ -23,7 +23,7 @@ module.exports = function (app) {
                     id: req.session.passport.user,
                     isloggedin: req.isAuthenticated()
                 }
-                res.render("bsprofile", user);
+                res.render("profile", user);
             })
         }
         else {
@@ -31,7 +31,7 @@ module.exports = function (app) {
                 id: null,
                 isloggedin: req.isAuthenticated()
             }
-            res.redirect("/bsprofile");//og had redirect("/")
+            res.redirect("/profile");//og had redirect("/")
         }
 
     });
@@ -65,7 +65,7 @@ module.exports = function (app) {
                 console.log('redirecting....');
                 res.cookie('first_name', user.first_name);
                 res.cookie('user_id', user.uuid);
-                return res.redirect("/bsprofile");
+                return res.redirect("/profile");
             });
         })(req, res, next);
     });
@@ -91,7 +91,7 @@ module.exports = function (app) {
                 res.cookie('first_name', user.first_name);
                 res.cookie('user_id', user.uuid);
 
-                return res.redirect("/bsprofile");
+                return res.redirect("/profile");
             });
         })(req, res, next);
     });

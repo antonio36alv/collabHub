@@ -29,9 +29,7 @@ app.engine(
     defaultLayout: "main"
   })
 );
-app.set("view engine", "handlebars");
-
-
+app.set("view engine", "handlebars")
 
 app.use(session({
     key: 'user_sid',
@@ -54,7 +52,6 @@ require("./routes/apiRoutes")(app, passport);
 require("./routes/htmlRoutes")(app, passport);
 require("./routes/user-auth-routes")(app, passport);
 require("./controllers/accountController")(app, passport);
-// require("./controllers/search-controller")(app, passport); @ODOT
 
 var syncOptions = { force: false };
 
@@ -63,17 +60,6 @@ var syncOptions = { force: false };
 if (process.env.NODE_ENV === "test") {
   syncOptions.force = true;
 }
-
-// Starting the server, syncing our models ------------------------------------/
-// db.sequelize.sync(syncOptions).then(function() {
-//   app.listen(PORT, function() {
-//     console.log(
-//       "==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.",
-//       PORT,
-//       PORT
-//     );
-//   });
-// });
 
 db.sequelize.sync().then(function(){
   app.listen(PORT, function(){
