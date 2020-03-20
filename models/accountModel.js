@@ -59,7 +59,7 @@ module.exports = function (sequelize, DataTypes) {
             }
         },
         skills: {
-            type: DataTypes.ARRAY(DataTypes.STRING),
+            type: DataTypes.STRING,
             required: true,
         }
     })
