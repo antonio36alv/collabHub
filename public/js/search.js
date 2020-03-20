@@ -1,29 +1,32 @@
-var express = require("express");
-var app = express();
-var PORT = process.env.PORT || 8080;
+$(document).ready(function() {
 
-//  search by skills
-$("#SEARCHBUTTONID").on("click", function() {
-  event.preventDefault();
-}
-// var skillSearch = function() {
-//     return $.ajax({
-//       url: "api/examples",
-//       type: "GET"
-//     });
-// };
+var searchResults = $(".search-results");
+var skillsSelect = $("#skillsDropdown");
 
-  // .then(function(response) {
-  //     //console.log(response);
-  //     $("#yelpCard").empty();
+//  click events for dropdown search --THIS IS WHERE I'M STUCK
+$(document).on("click", "button.delete", handlePostDelete);
+$(document).on("click", "button.edit", handlePostEdit);
+postCategorySelect.on("change", handleCategoryChange);
+var posts;
 
-  //Crating the card tags for materialize
-  var newCard = $("<div>").addClass("card sticky-action");
-   newCardContent.append(newCardTitle);
-}
-)
+// GET route for getting all of the posts
+app.get("/api/posts/id", function(req, res) {
+  // Add sequelize code to find all posts, and return them to the user with res.json
+  db.blogPost.findAll({
+    
+  })
+  
+  .then(function(data) {
+    res.json(data);
+  });
 
+// }Get route for returning posts of a specific category
+app.get("/api/posts/category/:category", function(req, res) {
+  // Add sequelize code to find all posts where the category is equal to req.params.category,
+  // return the result to the user with res.json
+});
 
+});
 
 // location search using Google API - icebox
 
@@ -42,7 +45,3 @@ $("#SEARCHBUTTONID").on("click", function() {
 // };
 
 // locSearch()
-
-
-
-
