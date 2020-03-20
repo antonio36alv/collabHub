@@ -1,32 +1,19 @@
 $(document).ready(function() {
+    $('select').formSelect();
+      
 
 var searchResults = $(".search-results");
 var skillsSelect = $("#skillsDropdown");
 
 //  click events for dropdown search --THIS IS WHERE I'M STUCK
-$(document).on("click", "button.delete", handlePostDelete);
-$(document).on("click", "button.edit", handlePostEdit);
-postCategorySelect.on("change", handleCategoryChange);
-var posts;
-
-// GET route for getting all of the posts
-app.get("/api/posts/id", function(req, res) {
-  // Add sequelize code to find all posts, and return them to the user with res.json
-  db.blogPost.findAll({
-    
+$("#collabbtn").on("click", function() {
+  var skill = $( "#skillsSelect option:selected" ).text();
+  $.get("/api/search/" + skill)
+  .then (function(data) {
+    console.log(data);
   })
-  
-  .then(function(data) {
-    res.json(data);
-  });
-
-// }Get route for returning posts of a specific category
-app.get("/api/posts/category/:category", function(req, res) {
-  // Add sequelize code to find all posts where the category is equal to req.params.category,
-  // return the result to the user with res.json
-});
-
-});
+})
+})
 
 // location search using Google API - icebox
 
@@ -45,3 +32,4 @@ app.get("/api/posts/category/:category", function(req, res) {
 // };
 
 // locSearch()
+
