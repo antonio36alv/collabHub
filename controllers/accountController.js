@@ -8,25 +8,7 @@ module.exports = function (app) {
     //     res.render("accounts");
     // });
 
-<<<<<<< HEAD
-    // Index Home Page Render
-    app.get("/", function(req, res) {
-        if(req.isAuthenticated()){
-          var user = {
-              id: req.session.passport.user,
-              isloggedin: req.isAuthenticated()
-          }
-          res.render("index", user);
-        } else {
-          res.render("index");
-        }
-        
-      });
-  
-    app.get("/bsprofile", function (req, res) {
-=======
     app.get("/profile", function (req, res) {
->>>>>>> 27561f383c545db98f77ca9cc3530b0bda077361
         console.log("%%%%%%%%% is logged in", req.isAuthenticated());
 
         if (req.isAuthenticated()) {
