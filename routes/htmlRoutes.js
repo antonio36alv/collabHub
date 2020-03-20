@@ -17,7 +17,7 @@ module.exports = function(app) {
       }
     }).then( user => {
     
-      console.log(user.dataValues)
+      // console.log(user.dataValues)
       console.log("did this happen?")
       return res.render("bsprofile", user)
     })
@@ -30,6 +30,10 @@ module.exports = function(app) {
 //        res.render("signup"); 
 //     } 
 // });
+
+app.get("/profile", (req, res) => {
+  res.render("profile")
+})
 
   app.get("*", (req, res) => {
     res.render("login")
