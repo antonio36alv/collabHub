@@ -45,7 +45,7 @@ module.exports = function (app) {
             res.redirect('/');
         })
     });
-    
+    //not this
     app.post('/signup', function (req, res, next) {
         passport.authenticate('local-signup', function (err, user, info) {
             console.log("info", info);
@@ -91,6 +91,8 @@ module.exports = function (app) {
                 res.cookie('first_name', user.first_name);
                 res.cookie('user_id', user.uuid);
 
+
+                console.log(req)
                 return res.redirect("/bsprofile");
             });
         })(req, res, next);

@@ -79,7 +79,7 @@
     {{{ body }}}
     
     
-    <script type="text/javascript" src="js/accounts.js"></script>
+    
     <script>
 
 $("#login").on("click", function (event) {
@@ -90,35 +90,40 @@ $("#login").on("click", function (event) {
     account_key: $("#password").val().trim()
   }
   
-  $.get("/bsprofile", user, function(results){
-    if(results){
+  //$.post("/bsprofile", function(results){
+    //if(results){
         //console.log(results)
 
-let callURL = "/bsprofile/" + user.email
+let callURL = "/bsprofile"///" + user.email
         
         $.ajax({
             url: callURL,
-            type: "GET"
+            type: "POST",
+            data: {email: user.email}
         }).then( data => {
         console.log("leedle")
+
+        //response from ajax calls gives me signup html?
+        console.log("glemfarks"+data)
+
             //console.log(`Received ${data}`)
             //console.log("finished get bsprofile")
-            //$(location).attr("href", "/bsprofile")
+            $(location).attr("href", data)
             //$(location).attr('href', "/bsprofile")
-            $(location).attr('href', data)
+            //$(location).attr('href', "/bsprofile/" + user.email)
         })
-     } else {
+   //  } else {
          
       //$("#account-info").modal("close");
       //document.write("no bueno")
       alert("oops something went wrong, please try again!");
 
        //$(location).attr('href', "./login")
-     }
+ //    }
    
   })
 
-});
+//});
     </script>
 </body>
 
