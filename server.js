@@ -54,7 +54,6 @@ require("./routes/apiRoutes")(app, passport);
 require("./routes/htmlRoutes")(app, passport);
 require("./routes/user-auth-routes")(app, passport);
 require("./controllers/accountController")(app, passport);
-// require("./controllers/search-controller")(app, passport); @ODOT
 
 var syncOptions = { force: false };
 
