@@ -1,61 +1,62 @@
+<div id="sup">
 
-<div id="sup">   
-      <form name ="myForm" action="user/signup" method="post">
-      
+    <form name="myForm" action="user/signup" method="post">
+
         <div class="container" id="mainsignup">
             <h3>Sign Up</h3>
-            <div class="row">
-                <div class="input-field col s6">
-                    First Name:
-                    <input id="inputFirst" type="text" class="validate" name="firstName" required>
+            <div class="colum1">
+                <div class="row">
+                    <div class="input-field col s6">
+                        First Name:
+                        <input id="inputFirst" type="text" class="validate" name="firstName" required>
+                        <label for="first_name"></label>
+                    </div>
+                    <div class="input-field col s6">
+                        Last Name:
+                        <input id="inputLast" type="text" class="validate" name="lastName" required>
+                        <label for="last_name"></label>
+                    </div>
+                    <div class="input-field col s6">
+                        City:
+                        <input id="inputCity" type="text" class="validate" name="city" required>
+                        <label for="city"></label>
+                    </div>
+                    <div class="input-field col s6">
+                        State:
+                        <input id="inputState" type="text" class="validate" name="state" required>
+                        <label for="state"></label>
+                    </div>
+                   
+                </div>
+            </div>
+            <div class="colum">
+                <div class="row">
+                    <div class="input-field col s6">
+                        Zip:
+                        <input id="inputZip" type="text" class="validate" name="zip" required>
+                        <label for="zip"></label>
+                    </div>
+                     <div class="input-field col s6">
+                        Email:
+                        <input id="inputEmail" type="text" class="validate" name="email" required>
+                        <label for="email"></label>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="input-field col s6">
+                        Password:
+                        <input id="inputPassword" type="text" class="validate" name="password" required>
+                        <label for="password"></label>
+                    </div>
                     
-                    <label for="first_name"></label>
                 </div>
-                <div class="input-field col s6">
-                    Last Name:
-                    <input id="inputLast" type="text" class="validate" name="lastName" required>
-                    <label for="last_name"></label>
+
+                <div class="row">
+                    <div class="col s12">
+                    </div>
+                    <input class="btn" id="add-account" type="submit" value="Submit">
                 </div>
-            </div>
-            <div class="row">
-                <div class="input-field col s6">
-                    City:
-                    <input id="inputCity" type="text" class="validate" name="city" required>
-                    <label for="city"></label>
-                </div>
-            </div>
-            <div class="row">
-                <div class="input-field col s6">
-                    State:
-                    <input id="inputState" type="text" class="validate" name="state" required>
-                    <label for="state"></label>
-                </div>
-            </div>
-            <div class="row">
-                <div class="input-field col s6">
-                    ZIP:
-                    <input id="inputZip" type="text" class="validate" name="zip" required>
-                    <label for="zip"></label>
-                </div>
-            </div>
-            <div class="row">
-                <div class="input-field col s6">
-                    Email:
-                    <input id="inputEmail" type="text" class="validate" name="email" required>
-                    <label for="email"></label>
-                </div>
-            </div>
-            <div class="row">
-                <div class="input-field col s6">
-                    Password:
-                    <input id="inputPassword" type="text" class="validate" name="password" required>
-                    <label for="password"></label>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col s12">
-                </div>
-                <input class="btn" id="add-account" type="submit" value="Submit">
             </div>
         </div>
     </form>
