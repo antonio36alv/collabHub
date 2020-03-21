@@ -38,7 +38,7 @@ module.exports = function (app) {
             res.clearCookie('user_sid');
             res.clearCookie('first_name');
             res.clearCookie('user_id');
-            res.redirect('/login');
+            res.redirect('/');
         })
     });
     

@@ -33,7 +33,7 @@ $("#add-account").on("click", function (event) {
       url: "/signup",
       data: newAccount
     }).then(function (data) {
-      window.location.href = "/profile"
+      window.location.href = "/login"
     });
   } else {
     console.log("**Please fill out entire form**");
