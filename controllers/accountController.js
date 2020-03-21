@@ -1,4 +1,4 @@
-var db = require("../models/skillsModel.js");
+var db = require("../models/accountModel.js");
 
 var passport = require('passport');
 
@@ -27,7 +27,7 @@ module.exports = function (app) {
                 id: null,
                 isloggedin: req.isAuthenticated()
             }
-            res.redirect("/profile");//og had redirect("/")
+            res.redirect("/profile");
         }
 
     });
@@ -50,10 +50,8 @@ module.exports = function (app) {
                 return next(err); // will generate a 500 error
             }
             if (!user) {
-                console.log("user error", user);
-                console.log(user)
-                return res.send({ success: false, message: 'auFFFFFFFthentication failed' });
-                //sends json @LOOKATTHIS
+                console.log("user error", user);                console.log(user)
+                return res.send({ success: false, message: 'authentication failed' });
             }
             req.login(user, loginErr => {
                 if (loginErr) {

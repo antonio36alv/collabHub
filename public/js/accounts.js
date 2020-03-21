@@ -21,15 +21,12 @@ $("#add-account").on("click", function (event) {
     state: $("#inputState").val().trim(),
     zip: $("#inputZip").val().trim(),
     email: $("#inputEmail").val().trim(),
-    skills: $("#inputSkills").val(),
+    skills: $("#inputSkills").val(),//@ODOT change as needed
     bio: $("#inputBio").val().trim(),
     account_key: $("#inputPassword").val().trim()
-    // photo:
   };
   //@ODOT add validation as needed
   if (newAccount.account_key.length > 0 && newAccount.email.length > 0 && newAccount.zip.length > 0 && newAccount.state.length > 0 && newAccount.city.length > 0 && newAccount.account_key.length > 0 && newAccount.last_name.length > 0 && newAccount.first_name.length > 0) {
-
-console.log(newAccount)
 
     $.ajax({
       type: "post",
@@ -40,7 +37,7 @@ console.log(newAccount)
     });
   } else {
     console.log("**Please fill out entire form**");
-    $("").empty("").text("**Please fill out entire form**");
+    $("create-err-msg").empty("").text("**Please fill out entire form**");
   }
 });
 
