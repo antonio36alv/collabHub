@@ -75,5 +75,3 @@ module.exports = function (sequelize, DataTypes) {
     };
     return Accounts;
 }
-
-

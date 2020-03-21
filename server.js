@@ -53,7 +53,7 @@ require("./routes/htmlRoutes")(app, passport);
 require("./routes/user-auth-routes")(app, passport);
 require("./controllers/accountController")(app, passport);
 
-var syncOptions = { force: false };
+var syncOptions = { force: true };
 
 // If running a test, set syncOptions.force to true
 // clearing the `testdb`
