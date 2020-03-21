@@ -38,7 +38,7 @@ module.exports = function (sequelize, DataTypes) {
             }
         },
         zip: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.STRING,
             allowNull: false,
             validate: {
                 len: [5]
@@ -57,7 +57,7 @@ module.exports = function (sequelize, DataTypes) {
         },
         bio: {
             type: DataTypes.STRING,
-            require: true
+            required: false
         },
         account_key: {
             type: DataTypes.STRING,
