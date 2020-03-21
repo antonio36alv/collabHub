@@ -53,4 +53,5 @@ module.exports = function(app){
       req.logOut()
       req.redirect("/login")
     })
+   
 };
