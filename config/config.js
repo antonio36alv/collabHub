@@ -1,4 +1,5 @@
 require("dotenv").config();
+
 module.exports = {
 
   "development": {
@@ -17,7 +18,10 @@ module.exports = {
     "logging": false
   },
   "production": {
-    "use_env_variable": "JAWSDB_URL",
+    "username": "hisagsmr72y7hj4x",
+    "password": "xruefif8efie761r",
+    "database": "xbes0304mhxq32e4",
+    "host": "ipobfcpvprjpmdo9.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
     "dialect": "mysql"
   }
 }
