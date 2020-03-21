@@ -25,18 +25,21 @@
         <thead>
         <tbody>
           <tr>
-            <!-- <td>User Photo -- Icebox</td> -->
-            <td>User's fName, lName</td>
-              <!-- One skill for now  -->
+            <td>Name</td>
             <td>User's skills</td>
             <td>Contact Button</td>
           </tr>
-          <!-- Append Row -->
+        {{#each data}}
+            <tr>
+                <td>{{this.first_name}} {{this.last_name}}</td>
+                <td>{{this.skills}}</td>
+                <td>User's Profile Page</td>
+            </tr>
+        {{/each}}
         </tbody>
       </table>
 
 </section>
-
 
 </section>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>

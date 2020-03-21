@@ -1,4 +1,5 @@
 var db = require("../models");
+var data = require("/public/search.js");
 
 module.exports = function(app) {
 // GET route for finding all users
