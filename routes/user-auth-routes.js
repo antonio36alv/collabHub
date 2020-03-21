@@ -15,6 +15,7 @@ module.exports = function(app){
     })
 
     app.get("/signup", function(req,res){
+      console.log("user off");
         if(req.isAuthenticated()){
             res.redirect("/profile");
         }else{
@@ -49,7 +50,7 @@ module.exports = function(app){
         })(req, res, next);
       });
 
-    app.delete("/logout", (req, res) => {
+    app.get("/logout", (req, res) => {
       req.logOut()
       req.redirect("/login")
     })

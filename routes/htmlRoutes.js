@@ -22,7 +22,7 @@ module.exports = function(app) {
           id: req.session.passport.user,
           isloggedin: req.isAuthenticated()
         }
-        res.render("profile", user);//maybe change
+        res.render("profile", user);
       })
     }
     else {
@@ -30,9 +30,11 @@ module.exports = function(app) {
           id: null,
           isloggedin: req.isAuthenticated()
         }
-      res.redirect("/");
+      res.redirect("/signup   ");
     }
 });
+
+app.get("/profile", (req, res) => res.render("profile", user))
 
   app.get("*", (req, res) => {
     res.render("login")

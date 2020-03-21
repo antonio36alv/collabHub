@@ -41,13 +41,12 @@ module.exports = function (passport) {
                             //@HACER change fields accordingly
                             first_name: req.body.first_name,
                             last_name: req.body.last_name,
-                            //street: req.body.street,
                             city: req.body.city,
                             state: req.body.state,
                             zip: req.body.zip,
-                            //balance: req.body.balance,
                             email: req.body.email,
-                            //phone: req.body.phone,
+                            skills: req.body.skills,
+                            bio: req.body.bio,
                             account_key: db.Accounts.generateHash(account_key)
 
                         }).then(function (dbUser) {

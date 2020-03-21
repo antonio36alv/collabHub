@@ -9,13 +9,15 @@ app.get("/api/search", function(req, res) {
 });
 
 // GET route for searching by skills
-app.get("/api/search/:skills", function(req, res) {
+app.get("/api/search/:skill", function(req, res) {
+  console.log(req.params.skill);
   db.Accounts.findAll({
     where: {
-      skills: req.params.skills
+      skills: req.params.skill
     }
   })
     .then(function(showSkills) {
+      console.log(showSkills);
       res.json(showSkills);
     });
 });

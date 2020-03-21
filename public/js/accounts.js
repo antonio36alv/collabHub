@@ -1,9 +1,10 @@
 $(document).ready(function(){
-  $('select').formSelect();x  
+  // $('select').formSelect();
   $("button").on("click",function(){
     const skills = $("select").val();
     console.log(skills);
   });
+});
 
 console.log("Accounts.js loaded");
 
@@ -20,23 +21,23 @@ $("#add-account").on("click", function (event) {
     state: $("#inputState").val().trim(),
     zip: $("#inputZip").val().trim(),
     email: $("#inputEmail").val().trim(),
-    account_key: $("#inputPassword").val().trim(),
-    skills: $("select").val(),
+    skills: $("#inputSkills").val(),//@ODOT change as needed
     bio: $("#inputBio").val().trim(),
-    // photo:
+    account_key: $("#inputPassword").val().trim()
   };
-  
+  //@ODOT add validation as needed
   if (newAccount.account_key.length > 0 && newAccount.email.length > 0 && newAccount.zip.length > 0 && newAccount.state.length > 0 && newAccount.city.length > 0 && newAccount.account_key.length > 0 && newAccount.last_name.length > 0 && newAccount.first_name.length > 0) {
+console.log("new user", "new account");
     $.ajax({
-      type: "post",
+      type: "POST",
       url: "/signup",
       data: newAccount
     }).then(function (data) {
-      window.location.href = "/"
+      window.location.href = "/login"
     });
   } else {
     console.log("**Please fill out entire form**");
-    $("#create-err-msg").empty("").text("**Please fill out entire form**");
+    $("create-err-msg").empty("").text("**Please fill out entire form**");
   }
 });
 
@@ -112,4 +113,3 @@ $("#confirm-delete").on("click", function (event) {
   }
 });
 */
-});
