@@ -1,6 +1,6 @@
 var uuidv1 = require('uuid/v1');
 var bcrypt = require('bcrypt');
-//@HACER change fields accordingly
+
 module.exports = function (sequelize, DataTypes) {
     var Accounts = sequelize.define("Accounts", {
         uuid: {
@@ -51,16 +51,20 @@ module.exports = function (sequelize, DataTypes) {
                 len: [1, 100]
             }
         },
+        skills: {
+            type: DataTypes.STRING,
+            required: true,
+        },
+        bio: {
+            type: DataTypes.STRING,
+            require: true
+        },
         account_key: {
             type: DataTypes.STRING,
             required: true,
             validate: {
                 len: [8]
             }
-        },
-        skills: {
-            type: DataTypes.STRING,
-            required: true,
         }
     })
     // methods ======================
@@ -75,5 +79,3 @@ module.exports = function (sequelize, DataTypes) {
     };
     return Accounts;
 }
-
-

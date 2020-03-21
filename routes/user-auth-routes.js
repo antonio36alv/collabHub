@@ -49,7 +49,7 @@ module.exports = function(app){
         })(req, res, next);
       });
 
-    app.delete("/logout", (req, res) => {
+    app.get("/logout", (req, res) => {
       req.logOut()
       req.redirect("/login")
     })
