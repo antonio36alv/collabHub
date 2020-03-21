@@ -1,39 +1,35 @@
 <h1>HEADING</h1>
-{{userInfo.last_name}}
-{{userInfo.city}}
-{{userInfo.state}}
-{{userInfo.zip}}
-{{userInfo.email}}
-
- <div class="container">
-    <h2>PROFILE</h2>
-    <div class="row">
-      <div class="col s12 l6">
-        <div class="card">
-          <div class="card-content">
-            <span class="card-title">{{user.userInfo}}</span>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean quis aliquam orci. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean quis aliquam orci. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit..</p>
-          </div>
-          <div class="card-action">
-            <p>{{userInfo.first_name}}</p>
-            
-          </div>
+<div class="container">
+  <h2>PROFILE</h2>
+  <div class="row">
+    <div class="col s12 l6">
+      <div class="card">
+        <div class="card-content">
+          <span class="card-title">
+            <h1>{{userInfo.first_name}} {{userInfo.last_name}}</h1>
+          </span>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean quis aliquam orci. Orci varius natoque
+            penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+        </div>
+        <div class="card-action">
+          <img src='http://via.placeholder.com/400x300' />
         </div>
       </div>
+    </div>
 
 
-      <div class="col s12 l6">
-        <div class="card">
-          <div class="card-content">
-            <span class="card-title">Skills</span>
-            <h6><strong>Education {{userInfo.dataValues}}</strong></h6>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            <h6><strong>Project</strong></h6>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            <h6><strong>Employment</strong></h6>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    <div class="col s12 l6">
+      <div class="card">
+        <div class="card-content">
+          <span class="card-title">Information {{userInfo.dataValues}}</span>
+          <h6><strong>City: {{userInfo.city}}</strong></h6>
+
+          <h6><strong>State: {{userInfo.state}}</strong></h6>
+
+          <h6><strong>Zipcode: {{userInfo.zip}}</strong></h6>
+
+          <h6><strong>Email: {{userInfo.email}}</strong></h6>
+
 
           <div class="card-action">
             <a href="">More Info</a>
@@ -42,21 +38,21 @@
       </div>
     </div>
     <div class="col s12 l6">
-        <div class="card">
-          <div class="card-content">
-            <span class="card-title">Portfolio</span>
-            <h6><strong>Solo Projects</strong></h6>
-            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <div class="card">
+        <div class="card-content">
+          <span class="card-title">Portfolio</span>
+          <h6><strong>Solo Projects</strong></h6>
+          <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
             <h6><strong>Group Projects</strong></h6>
-            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-          </div>
-          <div class="card-action">
-            <a href="">Let's connect</a>
-            <a href="">View my profile</a>
-          </div>
+          <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+          <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+        </div>
+        <div class="card-action">
+          <a href="">Let's connect</a>
+          <a href="">View my profile</a>
         </div>
       </div>
     </div>
-  </div> --
+  </div>
+</div> --
