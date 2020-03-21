@@ -43,6 +43,7 @@ module.exports = function (app) {
     });
     
     app.post('/signup', function (req, res, next) {
+        console.log("controler");
         passport.authenticate('local-signup', function (err, user, info) {
             console.log("info", info);
             if (err) {

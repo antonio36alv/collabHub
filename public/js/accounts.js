@@ -1,5 +1,5 @@
 $(document).ready(function(){
-  $('select').formSelect();
+  // $('select').formSelect();
   $("button").on("click",function(){
     const skills = $("select").val();
     console.log(skills);
@@ -27,9 +27,9 @@ $("#add-account").on("click", function (event) {
   };
   //@ODOT add validation as needed
   if (newAccount.account_key.length > 0 && newAccount.email.length > 0 && newAccount.zip.length > 0 && newAccount.state.length > 0 && newAccount.city.length > 0 && newAccount.account_key.length > 0 && newAccount.last_name.length > 0 && newAccount.first_name.length > 0) {
-
+console.log("new user", "new account");
     $.ajax({
-      type: "post",
+      type: "POST",
       url: "/signup",
       data: newAccount
     }).then(function (data) {

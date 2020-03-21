@@ -15,6 +15,7 @@ module.exports = function(app){
     })
 
     app.get("/signup", function(req,res){
+      console.log("user off");
         if(req.isAuthenticated()){
             res.redirect("/profile");
         }else{

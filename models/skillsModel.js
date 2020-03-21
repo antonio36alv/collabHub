@@ -34,7 +34,7 @@ module.exports = function (sequelize, DataTypes) {
             type: DataTypes.STRING,
             allowNull: false,
             validate: {
-                len: [1, 2]
+                len: [1, 30]
             }
         },
         zip: {
