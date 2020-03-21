@@ -52,10 +52,14 @@ module.exports = function (sequelize, DataTypes) {
             }
         },
 
-        // skills: {
-        //     type: DataTypes.STRING,
-        //     required: true,
-        // },
+        skills: {
+            type: DataTypes.STRING,
+            required: true,
+        },
+        bio: {
+            type: DataTypes.STRING,
+            require: true
+        },
         account_key: {
             type: DataTypes.STRING,
             required: true,

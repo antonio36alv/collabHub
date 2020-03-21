@@ -1,12 +1,8 @@
-var db = require("../models/accountModel.js");
+var db = require("../models/skillsModel.js");
 
 var passport = require('passport');
 
 module.exports = function (app) {
-
-    // app.get("/signup", function (req, res) {
-    //     res.render("accounts");
-    // });
 
     app.get("/profile", function (req, res) {
         console.log("%%%%%%%%% is logged in", req.isAuthenticated());
@@ -56,7 +52,7 @@ module.exports = function (app) {
             if (!user) {
                 console.log("user error", user);
                 console.log(user)
-                return res.send({ success: false, message: 'authentication failed' });
+                return res.send({ success: false, message: 'auFFFFFFFthentication failed' });
                 //sends json @LOOKATTHIS
             }
             req.login(user, loginErr => {

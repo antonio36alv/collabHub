@@ -1,9 +1,10 @@
 $(document).ready(function(){
-  $('select').formSelect();x  
+  $('select').formSelect();
   $("button").on("click",function(){
     const skills = $("select").val();
     console.log(skills);
   });
+});
 
 console.log("Accounts.js loaded");
 
@@ -20,9 +21,9 @@ $("#add-account").on("click", function (event) {
     state: $("#inputState").val().trim(),
     zip: $("#inputZip").val().trim(),
     email: $("#inputEmail").val().trim(),
-    account_key: $("#inputPassword").val().trim(),
     skills: $("#inputSkills").val(),
     bio: $("#inputBio").val().trim(),
+    account_key: $("#inputPassword").val().trim()
     // photo:
   };
   //@ODOT add validation as needed
@@ -35,7 +36,7 @@ console.log(newAccount)
       url: "/signup",
       data: newAccount
     }).then(function (data) {
-      window.location.href = "/profile"
+      window.location.href = "/login"
     });
   } else {
     console.log("**Please fill out entire form**");
@@ -115,4 +116,3 @@ $("#confirm-delete").on("click", function (event) {
   }
 });
 */
-});
