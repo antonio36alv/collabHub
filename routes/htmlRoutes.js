@@ -9,23 +9,6 @@ module.exports = function(app) {
 
   app.get("/profile", async (req, res) => {
 
-    var user = {
-
-    //   userInfo: {
-    //   zip: '10017',
-    //   city:'NY',
-    //   first_name: 'Antonio',
-    //   last_name: 'Alvarado',
-    //   id: true,
-    //   isloggedin: true
-    //   }
-      
-      
-      
-    }
-
-    res.render("profile", user);//maybe change
-
     console.log("%%%%%%%%% is logged in", req.isAuthenticated());
     if(req.isAuthenticated()){
 
