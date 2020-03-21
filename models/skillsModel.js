@@ -51,6 +51,11 @@ module.exports = function (sequelize, DataTypes) {
                 len: [1, 100]
             }
         },
+
+        // skills: {
+        //     type: DataTypes.STRING,
+        //     required: true,
+        // },
         account_key: {
             type: DataTypes.STRING,
             required: true,

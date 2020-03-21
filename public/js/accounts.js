@@ -21,22 +21,25 @@ $("#add-account").on("click", function (event) {
     zip: $("#inputZip").val().trim(),
     email: $("#inputEmail").val().trim(),
     account_key: $("#inputPassword").val().trim(),
-    skills: $("select").val(),
+    skills: $("#inputSkills").val(),
     bio: $("#inputBio").val().trim(),
     // photo:
   };
-  
+  //@ODOT add validation as needed
   if (newAccount.account_key.length > 0 && newAccount.email.length > 0 && newAccount.zip.length > 0 && newAccount.state.length > 0 && newAccount.city.length > 0 && newAccount.account_key.length > 0 && newAccount.last_name.length > 0 && newAccount.first_name.length > 0) {
+
+console.log(newAccount)
+
     $.ajax({
       type: "post",
       url: "/signup",
       data: newAccount
     }).then(function (data) {
-      window.location.href = "/"
+      window.location.href = "/profile"
     });
   } else {
     console.log("**Please fill out entire form**");
-    $("#create-err-msg").empty("").text("**Please fill out entire form**");
+    $("").empty("").text("**Please fill out entire form**");
   }
 });
 

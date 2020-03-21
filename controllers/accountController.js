@@ -55,7 +55,9 @@ module.exports = function (app) {
             }
             if (!user) {
                 console.log("user error", user);
+                console.log(user)
                 return res.send({ success: false, message: 'authentication failed' });
+                //sends json @LOOKATTHIS
             }
             req.login(user, loginErr => {
                 if (loginErr) {
