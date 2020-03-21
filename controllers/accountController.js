@@ -4,10 +4,6 @@ var passport = require('passport');
 
 module.exports = function (app) {
 
-    // app.get("/signup", function (req, res) {
-    //     res.render("accounts");
-    // });
-
     app.get("/profile", function (req, res) {
         console.log("%%%%%%%%% is logged in", req.isAuthenticated());
 
@@ -31,7 +27,7 @@ module.exports = function (app) {
                 id: null,
                 isloggedin: req.isAuthenticated()
             }
-            res.redirect("/profile");//og had redirect("/")
+            res.redirect("/profile");
         }
 
     });
@@ -47,6 +43,7 @@ module.exports = function (app) {
     });
     
     app.post('/signup', function (req, res, next) {
+        console.log("controler");
         passport.authenticate('local-signup', function (err, user, info) {
             console.log("info", info);
             if (err) {
@@ -54,7 +51,7 @@ module.exports = function (app) {
                 return next(err); // will generate a 500 error
             }
             if (!user) {
-                console.log("user error", user);
+                console.log("user error", user);                console.log(user)
                 return res.send({ success: false, message: 'authentication failed' });
             }
             req.login(user, loginErr => {

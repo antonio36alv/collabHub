@@ -63,7 +63,7 @@ module.exports = function (sequelize, DataTypes) {
             type: DataTypes.STRING,
             required: true,
             validate: {
-                len: [20]
+                len: [8]
             }
         }
     })
