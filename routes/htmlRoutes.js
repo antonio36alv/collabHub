@@ -30,7 +30,7 @@ module.exports = function(app) {
           id: null,
           isloggedin: req.isAuthenticated()
         }
-      res.redirect("/signup   ");
+      res.redirect("/signup");
     }
 });
 
