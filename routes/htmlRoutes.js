@@ -17,10 +17,12 @@ module.exports = function(app) {
           uuid: req.session.passport.user
         }
       }).then(function(dbUser){
+        // API call to github to add repos goes in here
         var user = {
           userInfo: dbUser.dataValues,
           id: req.session.passport.user,
           isloggedin: req.isAuthenticated()
+          // github username goes here
         }
         res.render("profile", user);
       })
