@@ -1,3 +1,11 @@
+$(document).ready(function(){
+  // $('select').formSelect();
+  $("button").on("click",function(){
+    const skills = $("select").val();
+    console.log(skills);
+  });
+});
+
 console.log("Accounts.js loaded");
 
 // ADD    ****************
@@ -25,7 +33,7 @@ console.log("new user", "new account");
       url: "/signup",
       data: newAccount
     }).then(function (data) {
-      window.location.href = "/profile"
+      window.location.href = "/login"
     });
   } else {
     console.log("**Please fill out entire form**");
