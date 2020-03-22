@@ -1,26 +1,22 @@
+  <div class= "container">
+    <br><h3>Find a collaborator</h3>
 
-    <h1>Find a collaborator</h1>
-
-    <div class="input-field col s12 search-results">
-        <label>What kind of collab do you need?</label><br>
+    <section class="input-field col s12 search-results">
         <select id="skillsSelect">
           <option value="Full Stack Developer">Full Stack Developer</option>
           <option value="Back End Developer">Back End Developer</option>
           <option value="Front End Developer">Front End Developer</option>
-          <option value="UX/UI Designer">UX/UI Designer</option>
+          <option value="UXUI Designer">UX/UI Designer</option>
           <option value="Linux">Linux</option>
           <option value="Android">Android</option>
           <option value="iOS">iOS</option>                    
         </select>
+        </section>
+      <button class="btn" id="collabbtn">Find a Collab!</button>
       </div>
-
-    <button id="collabbtn">Find a Collab!</button>
-<br>
-<br>
 <!-- Hide this table until "collab" button clicked -->
 <!-- "highlight" class uses the Materialize Highlight Table format -->
-
-<section>
+<section class= "container">
     <table class= "highlight">
         <thead>
         <tbody>
@@ -31,8 +27,8 @@
           </tr>
         {{#each data}}
             <tr>
-                <td>{{this.first_name}} {{this.last_name}}</td>
-                <td>{{this.skills}}</td>
+                <td>{{data.first_name}} {{accounts.last_name}}</td>
+                <td>{{Accounts.dataValues.skills}}</td>
                 <td>User's Profile Page</td>
             </tr>
         {{/each}}

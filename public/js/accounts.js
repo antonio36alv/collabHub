@@ -1,11 +1,3 @@
-$(document).ready(function(){
-  // $('select').formSelect();
-  $("button").on("click",function(){
-    const skills = $("select").val();
-    console.log(skills);
-  });
-});
-
 console.log("Accounts.js loaded");
 
 // ADD    ****************
