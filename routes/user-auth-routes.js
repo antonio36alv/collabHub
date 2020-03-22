@@ -52,6 +52,7 @@ module.exports = function(app){
 
     app.get("/logout", (req, res) => {
       req.logOut()
+      res.status(200).clearCookie('user_id', {path: '/'}).json({status: "Success"});
       req.redirect("/login")
     })
 };
