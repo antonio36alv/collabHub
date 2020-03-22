@@ -35,36 +35,16 @@ app.use(passport.initialize());
 app.use(passport.session()); 
 app.use(flash());
 app.use(cookieParser())
-app.enable("trust proxy")
 
 app.use(session({
-    key: 'user_sid',
-    secret: 'goN6DJJC6E287cC77kkdYuNuAyWnz7Q3iZj8',
-    resave: true,
-    saveUninitialized: false,
-    cookie: {
-        secure: true,
-        expires: 600000
-    }
-}));
-
-/*
-
-
-app.use(cookieParser());
-app.enable('trust proxy'); // add this line
-app.use(session({
-  secret: 'secret',
-  resave: true,
-  saveUninitialized: true,
-  proxy: true, // add this line
+  key: 'user_sid',
+  secret: 'goN6DJJC6E287cC77kkdYuNuAyWnz7Q3iZj8',
+  resave: false,
+  saveUninitialized: false,
   cookie: {
-    secure: true,
-    maxAge: 3600000,
-    store: new MongoStore({ url: config.DB_URL })
+      expires: 600000
   }
 }));
-*/
 
 // Routes
 require("./routes/apiRoutes")(app, passport);
