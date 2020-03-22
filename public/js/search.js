@@ -1,11 +1,9 @@
 $(document).ready(function() {
     $('select').formSelect();
-      
 
 var searchResults = $(".search-results");
 var skillsSelect = $("#skillsDropdown");
 
-//  click events for dropdown search --THIS IS WHERE I'M STUCK
 $("#collabbtn").on("click", function() {
   var skill = $( "#skillsSelect option:selected" ).text();
   $.get("/api/search/" + skill)
@@ -13,6 +11,7 @@ $("#collabbtn").on("click", function() {
     console.log(data);
   })
 })
+
 })
 
 // location search using Google API - icebox
