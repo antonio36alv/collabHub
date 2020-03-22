@@ -1,3 +1,5 @@
+// This file is in the "routes" folder, connecting to the data
+
 var db = require("../models");
 
 module.exports = function(app) {
@@ -25,6 +27,4 @@ app.get("/api/search/:skill", function(req, res) {
 app.get("/search", function(req, res){
   res.render("search");
 })
-// // fill search.handlebars with results, send to client
-// res.render('search results', {data});
 }
