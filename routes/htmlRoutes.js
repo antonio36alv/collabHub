@@ -30,8 +30,7 @@ module.exports = function(app) {
           id: null,
           isloggedin: req.isAuthenticated()
         }
-        console.log("LOCO")
-      res.redirect("/signup");
+      res.redirect("/signup   ");
     }
 });
 
