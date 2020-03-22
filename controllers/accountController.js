@@ -43,7 +43,7 @@ module.exports = function (app) {
     });
     
     app.post('/signup', function (req, res, next) {
-        console.log("controler");
+
         passport.authenticate('local-signup', function (err, user, info) {
             console.log("info", info);
             if (err) {
@@ -51,7 +51,7 @@ module.exports = function (app) {
                 return next(err); // will generate a 500 error
             }
             if (!user) {
-                console.log("user error", user);                console.log(user)
+                console.log("user error", user);
                 return res.send({ success: false, message: 'authentication failed' });
             }
             req.login(user, loginErr => {
