@@ -14,24 +14,18 @@
         </section>
       <button class="btn" id="collabbtn">Find a Collab!</button>
       </div>
-<!-- Hide this table until "collab" button clicked -->
+
 <!-- "highlight" class uses the Materialize Highlight Table format -->
 <section class= "container">
-    <table class= "highlight">
+    <table class= "highlight" id="searchResults">
         <thead>
         <tbody>
           <tr>
             <td>Name</td>
-            <td>User's skills</td>
-            <td>Contact Button</td>
+            <td>Skills</td>
+            <td>City</td>
+            <td>Contact</td>
           </tr>
-        {{#each data}}
-            <tr>
-                <td>{{user.first_name}} {{accounts.last_name}}</td>
-                <td>{{Accounts.dataValues.skills}}</td>
-                <td>User's Profile Page</td>
-            </tr>
-        {{/each}}
         </tbody>
       </table>
 

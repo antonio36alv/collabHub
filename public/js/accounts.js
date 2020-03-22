@@ -23,6 +23,7 @@ $("#add-account").on("click", function (event) {
     email: $("#inputEmail").val().trim(),
     skills: $("#inputSkills").val(),//@ODOT change as needed
     bio: $("#inputBio").val().trim(),
+    // github: $(#inputGitHub).val().trim(),
     account_key: $("#inputPassword").val().trim()
   };
   //@ODOT add validation as needed
@@ -33,13 +34,15 @@ console.log("new user", "new account");
       url: "/signup",
       data: newAccount
     }).then(function (data) {
-      window.location.href = "/profile"
+      window.location.href = "/login"
     });
   } else {
     console.log("**Please fill out entire form**");
     $("create-err-msg").empty("").text("**Please fill out entire form**");
   }
+
 });
+
 
 // // UPDATE      **********************
 // $("#update-account").on("click", function (event) {
