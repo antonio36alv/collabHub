@@ -1,9 +1,6 @@
 $(document).ready(function() {
     $('select').formSelect();
 
-// fill search.handlebars with results, send to client
-res.render('search results', {data});
-
 var searchResults = $(".search-results");
 var skillsSelect = $("#skillsDropdown");
 
