@@ -54,7 +54,7 @@ require("./routes/htmlRoutes")(app, passport);
 require("./routes/user-auth-routes")(app, passport);
 require("./controllers/accountController")(app, passport);
 
-require("./routes/gitHubRoutes")(app, passport);
+// require("./routes/gitHubRoutes")(app, passport);
 var syncOptions = { force: false };
 
 // If running a test, set syncOptions.force to true
