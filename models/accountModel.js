@@ -51,13 +51,13 @@ module.exports = function (sequelize, DataTypes) {
                 len: [1, 100]
             }
         },
-        // github: {
-        //     type: DataTypes.STRING,
-        //     allowNull: true,
-        //     validate: {
-        //         len: [1, 100]
-        //     }
-        // },
+        github: {
+            type: DataTypes.STRING,
+            allowNull: true,
+            validate: {
+                len: [1, 100]
+            }
+        },
         skills: {
             type: DataTypes.STRING,
             required: true,
