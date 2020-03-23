@@ -8,11 +8,12 @@ module.exports = function(app){
                 isloggedin: req.isAuthenticated()
             }
             res.render("profile", user);
-        }
+
+        } 
         else{
             res.render("login");
         }
-    })
+    });
 
     app.get("/signup", function(req,res){
       console.log("user off");

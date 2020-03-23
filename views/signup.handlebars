@@ -15,25 +15,25 @@
     <form name="myForm" action="user/signup" method="post">
 
         <div class="container" id="mainsignup">
-            <h3 id="s">Sign Up</h3>
+            <h3 id="s">Join collabHub</h3>
             <div class="colum1">
                 <div class="row">
-                    <div class="input-field col s6">
+                    <div class="input-field col s12 m6">
                         First Name:
                         <input id="inputFirst" type="text" class="validate" name="firstName" required>
                         <label for="first_name"></label>
                     </div>
-                    <div class="input-field col s6">
+                    <div class="input-field col s12 m6">
                         Last Name:
                         <input id="inputLast" type="text" class="validate" name="lastName" required>
                         <label for="last_name"></label>
                     </div>
-                    <div class="input-field col s6">
+                    <div class="input-field col s12 m6">
                         City:
                         <input id="inputCity" type="text" class="validate" name="city" required>
                         <label for="city"></label>
                     </div>
-                    <div class="input-field col s6">
+                    <div class="input-field col s12 m6">
                         State:
                         <input id="inputState" type="text" class="validate" name="state" required>
                         <label for="state"></label>
@@ -43,30 +43,46 @@
             </div>
             <div class="colum">
                 <div class="row">
-                    <div class="input-field col s6">
+                    <div class="input-field col s12 m6">
                         Zip:
                         <input id="inputZip" type="text" class="validate" name="zip" required>
                         <label for="zip"></label>
                     </div>
-                     <div class="input-field col s6">
+                    <div class="input-field col s12 m6">
+                        GitHub username:
+                        <input id="inputGitHub" type="text" class="validate" name="github" required>
+                        <label for="github"></label>
+                    </div>
+                </div>
+                
+                <div class="row">
+                     <div class="input-field col s12 m6">
                         Email:
                         <input id="inputEmail" type="text" class="validate" name="email" required>
                         <label for="email"></label>
                     </div>
-                    
-                </div>
-                
-                <div class="row">
-                    <div class="input-field col s6">
+                <div class="input-field col s12 m6">
                         Password:
                         <input id="inputPassword" type="password" class="validate" name="password" required>
                         <label for="password"></label>
                     </div>
-                    <div class="input-field col s6">
-                        Skills/Talents:
-                        <input id="inputSkills" type="text" class="validate" name="skills" required>
-                        <label for="skills"></label>
-                    </div>
+
+                <div class="row">
+                    <section class="input-field col s12 search-results">
+                            Select your skills
+                    <select type= "text" name="skills" required>
+                      <option value="" disabled selected>Choose your skills</option>
+                      <option value="Full Stack Developer">Full Stack Developer</option>
+                      <option value="Back End Developer">Back End Developer</option>
+                      <option value="Front End Developer">Front End Developer</option>
+                      <option value="UX/UI Designer">UX/UI Designer</option>
+                      <option value="Linux">Linux</option>
+                      <option value="Android">Android</option>
+                      <option value="iOS">iOS</option>                    
+                            </select>
+                        </section>
+                </div>
+                        
                     <div class=" col s6">
                       Tell us something about yourself
                         <input id="inputBio"  type="textbox" style="font-size:15pt;height:200px;width:650px;"  name="Bio" required>
@@ -75,7 +91,6 @@
 
                     
                 </div>
-
                 
             </div>
         </div>
@@ -83,7 +98,7 @@
                           <div class="row">
                     <div class="col s12">
                     </div>
-                    <input class="btn" id="add-account" type="submit" value="Submit">
+                    <input class="btn btn-round btn-large" id="add-account" type="submit" value="Submit">
                 </div>
                         </center>
                     </form>

@@ -36,6 +36,7 @@ console.log("new user", "new account");
     }).then(function (data) {
       window.location.href = "/login"
     });
+    console.log("I nust clicked the login button")
   } else {
     console.log("**Please fill out entire form**");
     $("create-err-msg").empty("").text("**Please fill out entire form**");

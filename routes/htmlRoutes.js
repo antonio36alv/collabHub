@@ -25,6 +25,7 @@ module.exports = function(app) {
           // github username goes here
         }
         res.render("profile", user);
+        console.log("I just clicked the login button")
       })
     }
     else {
@@ -38,6 +39,7 @@ module.exports = function(app) {
 
 app.get("/profile", (req, res) => {
   req.isAuthenticated() ? res.render("profile", user) : res.redirect("/")
+
 })
 
 app.get("*", (req, res) => {
