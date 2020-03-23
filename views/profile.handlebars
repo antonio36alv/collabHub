@@ -1,12 +1,14 @@
 
 <div class="container">
-  <h4 class="l">Profile</h4>
+  <h4 id="l">Collaborator Profile</h4>
+  </div>
+  <div class="container">
   <div class="row">
     <div class="col s12 l6">
       <div class="card">
         <div class="card-content">
           <span class="card-title">
-            <h1 class="s">{{userInfo.first_name}} {{userInfo.last_name}}</h1>
+            <h4 id="l">{{userInfo.first_name}} {{userInfo.last_name}}</h4>
           </span>
           <p>{{userInfo.bio}}.</p>
         </div>
@@ -37,15 +39,21 @@
       <div class="card">
         <div class="card-content">
           <span class="card-title">Portfolio</span>
-          <h6><strong>Github Repositories</strong></h6>
-          <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            <h6><strong>Other Links</strong></h6>
-          <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-          <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+          <h6><strong>Developer Portfolio</a></strong></h6><br>
+            <h6><strong><a href="https:www.github.com/"+{{userInfo.github}}>GitHub Repositories</a></strong></h6><br>
+
+            <p>Repo 1</p>
+            <p>Repo 2</p>
+            <p>Repo 3</p>
+            <p>Github username: {{userInfo.github}}</p><br>
+
+            <h6><strong>Links</strong></h6>
+          <li>LinkedIn</li>
+          <li>Socials</li>
         </div>
         <div class="card-action">
-          <button type='mailto' name="" id="" class='col s12 btn btn-round waves-effect'>>Let's collab!</a>
+          <button type='mailto' name="" id="" class='col s12 btn btn-round waves-effect'>
+            Let's collab!</button>
           {{!-- <a href="">View my profile</a> --}}
         </div>
       </div>
