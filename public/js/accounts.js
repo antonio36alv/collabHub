@@ -34,16 +34,14 @@ console.log("new user", "new account");
       url: "/signup",
       data: newAccount
     }).then(function (data) {
-      window.location.href = "/login"
+      window.location.href = "/profile"
     });
 
   } else {
     console.log("**Please fill out entire form**");
     $("create-err-msg").empty("").text("**Please fill out entire form**");
   }
-
 });
-
 
 // // UPDATE      **********************
 // $("#update-account").on("click", function (event) {

@@ -32,20 +32,21 @@ app.engine(
 );
 app.set("view engine", "handlebars")
 
+app.use(session({
+    key: 'user_sid',
+    secret: 'goN6DJJC6E287cC77kkdYuNuAyWnz7Q3iZj8',
+    resave: false,
+    saveUninitialized: false,
+    cookie: {
+        expires: 600000
+    }
+}));
+
+
 app.use(passport.initialize());
 app.use(passport.session()); 
 app.use(flash());
-app.use(cookieParser())
 
-app.use(session({
-  key: 'user_sid',
-  secret: 'goN6DJJC6E287cC77kkdYuNuAyWnz7Q3iZj8',
-  resave: false,
-  saveUninitialized: false,
-  cookie: {
-      expires: 600000
-  }
-}));
 
 // Routes
 require("./routes/apiRoutes")(app, passport);
