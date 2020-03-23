@@ -56,4 +56,5 @@ module.exports = function(app){
       res.status(200).clearCookie('user_id', {path: '/'}).json({status: "Success"});
       req.redirect("/login")
     })
+   
 };
