@@ -37,6 +37,7 @@ module.exports = function(app) {
 
 app.get("/profile", (req, res) => {
   req.isAuthenticated() ? res.render("profile", user) : res.redirect("/")
+
 })
 
 app.get("*", (req, res) => {
