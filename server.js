@@ -1,6 +1,7 @@
 require("dotenv").config();
 var express = require("express");
 var exphbs = require("express-handlebars");
+var http = require("http");
 
 var db = require("./models");
 
@@ -53,7 +54,8 @@ require("./routes/htmlRoutes")(app, passport);
 require("./routes/user-auth-routes")(app, passport);
 require("./controllers/accountController")(app, passport);
 
-var syncOptions = { force: true };
+// require("./routes/gitHubRoutes")(app, passport);
+var syncOptions = { force: false };
 
 // If running a test, set syncOptions.force to true
 // clearing the `testdb`
@@ -61,7 +63,7 @@ if (process.env.NODE_ENV === "test") {
   syncOptions.force = true;
 }
 
-db.sequelize.sync().then(function(){
+db.sequelize.sync(syncOptions).then(function(){
   app.listen(PORT, function(){
       console.log("Listening on localhost:" + PORT);
   })

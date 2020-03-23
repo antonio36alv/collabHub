@@ -1,5 +1,5 @@
 $(document).ready(function(){
-  // $('select').formSelect();
+  $('select').material_select();
   $("button").on("click",function(){
     const skills = $("select").val();
     console.log(skills);
@@ -22,6 +22,7 @@ $("#add-account").on("click", function (event) {
     zip: $("#inputZip").val().trim(),
     email: $("#inputEmail").val().trim(),
     skills: $("#inputSkills").val(),//@ODOT change as needed
+    github: $("#inputGitHub").val().trim(),
     bio: $("#inputBio").val().trim(),
     account_key: $("#inputPassword").val().trim()
   };
@@ -33,8 +34,9 @@ console.log("new user", "new account");
       url: "/signup",
       data: newAccount
     }).then(function (data) {
-      window.location.href = "/login"
+      window.location.href = "/profile"
     });
+
   } else {
     console.log("**Please fill out entire form**");
     $("create-err-msg").empty("").text("**Please fill out entire form**");

@@ -17,6 +17,7 @@ app.get("/api/search/:skill", function(req, res) {
     }
   })
     .then(function(showSkills) {
+      console.log(showSkills);
       res.json(showSkills);
     });
 });

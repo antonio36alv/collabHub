@@ -30,14 +30,18 @@ module.exports = function(app) {
           id: null,
           isloggedin: req.isAuthenticated()
         }
-      res.redirect("/signup   ");
+        console.log("LOCO")
+      res.redirect("/signup");
     }
 });
 
-app.get("/profile", (req, res) => res.render("profile", user))
+app.get("/profile", (req, res) => {
+  req.isAuthenticated() ? res.render("profile", user) : res.redirect("/")
 
-  app.get("*", (req, res) => {
-    res.render("login")
-  })
+})
+
+app.get("*", (req, res) => {
+  res.render("login")
+})
 
 };
