@@ -1,20 +1,20 @@
 var db = require("../models");
 const axios = require("axios");
 
-module.exports = function(app) {
-  
+module.exports = function (app) {
+
   app.get("/signup", (req, res) => {
     res.render("signup")
   })
-/************************************************************ */ 
 
   app.get("/profile", async (req, res) => {
 
     console.log("%%%%%%%%% is logged in", req.isAuthenticated());
-    if(req.isAuthenticated()){
+
+    if (req.isAuthenticated()) {
 
       db.Accounts.findOne({
-        where:{
+        where: {
           uuid: req.session.passport.user
         }
       }).then(function(dbUser){
@@ -33,21 +33,42 @@ module.exports = function(app) {
     }
     else {
       var user = {
-          id: null,
-          isloggedin: req.isAuthenticated()
-        }
-        console.log("LOCO")
+        id: null,
+        isloggedin: req.isAuthenticated()
+      }
       res.redirect("/signup");
     }
-});
+  });
 
-app.get("/profile", (req, res) => {
-  req.isAuthenticated() ? res.render("profile", user) : res.redirect("/")
+  app.get("view/profile/:email", (req, res) => {
 
-})
+    if (req.isAuthenticated()) {
 
-app.get("*", (req, res) => {
-  res.render("login")
-})
+      db.Accounts.findOne({
+        where: {
+          email: req.params.email
+        }
+      }).then(dbUser => {
+        console.log(dbUser.dataValues)
+
+        res.render("profile", dbUser.dataValues)
+      })
+    }
+  })
+
+  app.get('/logout', function (req, res) {
+
+    req.session.destroy(function (err) {
+      req.logout();
+      res.clearCookie('user_sid');
+      res.clearCookie('first_name');
+      res.clearCookie('user_id');
+      res.redirect('/');
+    })
+  });
+
+  app.get("*", (req, res) => {
+    res.render("login")
+  })
 
 };
