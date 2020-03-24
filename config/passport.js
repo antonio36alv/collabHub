@@ -46,6 +46,7 @@ module.exports = function (passport) {
                             zip: req.body.zip,
                             email: req.body.email,
                             skills: req.body.skills,
+                            github: req.body.github, 
                             bio: req.body.bio,
                             account_key: db.Accounts.generateHash(account_key)
 

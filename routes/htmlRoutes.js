@@ -1,4 +1,5 @@
 var db = require("../models");
+const axios = require("axios");
 
 module.exports = function(app) {
   
@@ -17,12 +18,17 @@ module.exports = function(app) {
           uuid: req.session.passport.user
         }
       }).then(function(dbUser){
-        var user = {
-          userInfo: dbUser.dataValues,
-          id: req.session.passport.user,
-          isloggedin: req.isAuthenticated()
-        }
-        res.render("profile", user);
+        axios.get(`https://api.github.com/users/${dbUser.dataValues.github}?token=git: https://github.com/ on LAPTOP-9NDU5MQS at 07-Feb-2020 23:43`).then(function(result){
+          var user = {
+            userInfo: dbUser.dataValues,
+            id: req.session.passport.user,
+            isloggedin: req.isAuthenticated(),
+            githubInfo: result
+          }
+          console.log(result);
+          res.render("profile", user);
+          
+        });
       })
     }
     else {
