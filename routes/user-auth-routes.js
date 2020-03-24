@@ -26,7 +26,7 @@ module.exports = function(app){
 
     app.post('/login', function(req, res, next) {
         passport.authenticate('local-login', function(err, user, info) {
-          console.log("\n\n\n########userrrr", user)
+          // console.log("\n\n\n########userrrr", user)
           if (err) {
             console.log("passport err", err);
             return next(err); // will generate a 500 error
@@ -51,9 +51,5 @@ module.exports = function(app){
         })(req, res, next);
       });
 
-    app.get("/logout", (req, res) => {
-      req.logOut()
-      res.status(200).clearCookie('user_id', {path: '/'}).json({status: "Success"});
-      req.redirect("/login")
-    })
+    
 };
