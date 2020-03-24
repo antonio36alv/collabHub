@@ -2,7 +2,8 @@
 
 This is an application that connects professionals with similar interests and skill sets so that they can work together, discover new opportunities and grow their network. 
 
-## Demonstration:
+## Link on Heroku: 
+[collabHub](https://collab-hub.herokuapp.com/)
 
 ## Installation: 
 - Run `npm install` and `npm init`
@@ -37,12 +38,6 @@ Once the files are set up, we need to create the connection among them.
 ## Lisence:
 
 MIT
-
-## Link to CollabHub on GitHub:
-
-
-## Link on Heroku: 
-
 
 ## Authors:
 - Amy Hollinger

@@ -29,7 +29,11 @@ module.exports = function (app) {
           res.render("profile", user);
           
         });
+<<<<<<< HEAD
       })
+=======
+     })
+>>>>>>> 3e8eb6562987dc564eb6364a3207db5e5935b2d3
     }
     else {
       var user = {
