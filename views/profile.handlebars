@@ -11,14 +11,16 @@
         <div class="card-content">
           <span class="card-title">
             <h4 class="main-title">{{userInfo.first_name}} {{userInfo.last_name}}</h4>
-          </span>
+            <p>{{userInfo.skill}}</p>
+              </span>
         </div>
-        <div class="card-action">
-      {{!-- Make this work, then resize to fit in the box --}}
-          <img src={{gitHubObject.photo}} />
-        </div>
+        <div class="card-action square">
+
+          <img src={{githubInfo.photo}} />
+
       </div>
     </div>
+      </div>
 
 
     <div class="col s12 l6">
@@ -40,7 +42,7 @@
           <h6><strong><a href= target="_blank">Portfolio Link</a></strong></h6><br>
 
             <h6><strong>Favorite Projects</a></strong></h6>
-            <p>Github username: <a href={{gitHubObject.gitHubprofile}}></a>{{userInfo.github}}</a></p><br>
+            <p>Github username: <a href={{githubInfo.gitHubProfile}}>{{userInfo.github}}</a></p><br>
 
           {{!--Repository call goes here --}}
             <p><a href="" target="_blank">Repo 1</a></p>
