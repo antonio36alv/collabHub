@@ -1,19 +1,21 @@
 
 <div class="container">
-  <h4 id="l">Collaborator Profile</h4>
+  <h4 class="main-title">Collaborator Profile</h4>
   </div>
+
+
   <div class="container">
-  <div class="row">
+  <div class="row ">
     <div class="col s12 l6">
       <div class="card">
         <div class="card-content">
           <span class="card-title">
-            <h4 id="l">{{userInfo.first_name}} {{userInfo.last_name}}</h4>
+            <h4 class="main-title">{{userInfo.first_name}} {{userInfo.last_name}}</h4>
           </span>
-          <p>{{userInfo.bio}}.</p>
         </div>
         <div class="card-action">
-          <img src='http://via.placeholder.com/400x300' />
+      {{!-- Make this work, then resize to fit in the box --}}
+          <img src={{gitHubObject.photo}} />
         </div>
       </div>
     </div>
@@ -22,38 +24,37 @@
     <div class="col s12 l6">
       <div class="card">
         <div class="card-content">
-          <span class="card-title">Information {{userInfo.dataValues}}</span>
-          <h6><strong>City: {{userInfo.city}}</strong></h6>
+          <span class="card-title profile-title">About Me</h6></span>
+            <p>{{userInfo.bio}}</p><br>
+          <span class="card-title profile-title">Location {{userInfo.dataValues}}</span>
+          <p> {{userInfo.city}}, {{userInfo.state}}</p></br>
 
-          <h6><strong>State: {{userInfo.state}}</strong></h6>
-
-          <h6><strong>Zipcode: {{userInfo.zip}}</strong></h6>
-
-          {{!-- <div class="card-action">
-            <a href="">More Info</a>
-          </div> --}}
-        </div>
+          </div>
       </div>
     </div>
     <div class="col s12 l6">
       <div class="card">
         <div class="card-content">
-          <span class="card-title">Portfolio</span>
-          <h6><strong>Developer Portfolio</a></strong></h6><br>
-            <h6><strong><a href="https://www.github.com/{{userInfo.github}}">GitHub Repositories</a></strong></h6><br>
+          <span class="card-title profile-title">{{userInfo.first_name}}'s Portfolio</span>
 
-            <p>Repo 1</p>
-            <p>Repo 2</p>
-            <p>Repo 3</p>
-            <p>Github username: {{userInfo.github}}</p><br>
+          <h6><strong><a href= target="_blank">Portfolio Link</a></strong></h6><br>
 
-            <h6><strong>Links</strong></h6>
+            <h6><strong>Favorite Projects</a></strong></h6>
+            <p>Github username: <a href={{gitHubObject.gitHubprofile}}></a>{{userInfo.github}}</a></p><br>
+
+          {{!--Repository call goes here --}}
+            <p><a href="" target="_blank">Repo 1</a></p>
+            <p><a href="" target="_blank">Repo 2</a></p>
+            <p><a href="" target="_blank">Repo 3</a></p>
+
+          {{!-- Update database to include social, portfolio links --}}
+            {{!-- <h6><strong>Links</strong></h6>
           <li>LinkedIn</li>
-          <li>Socials</li>
+          <li>Socials</li> --}}
         </div>
         <div class="card-action">
           <button type='mailto' name="" id="" class='col s12 btn btn-round waves-effect'>
-            Let's collab!</button>
+            Let's collab!</button>  
           {{!-- <a href="">View my profile</a> --}}
         </div>
       </div>

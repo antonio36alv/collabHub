@@ -18,22 +18,33 @@ module.exports = function (app) {
           uuid: req.session.passport.user
         }
       }).then(function(dbUser){
-        axios.get(`https://api.github.com/users/${dbUser.dataValues.github}?token=git: https://github.com/ on LAPTOP-9NDU5MQS at 07-Feb-2020 23:43`).then(function(result){
+        // Github API call 
+        axios.get(`https://api.github.com/users/${dbUser.dataValues.github}`).then(function(result){
+// //  Pulls info we want from each person from Github
+        var gitHubObject = {
+            photo: result.data.avatar_url,
+            ifNoPhoto: result.data.gravatar_id,
+            gitHubProfile: result.data.html_url,
+          }
+          // ITS WORKING
+          // console.log(gitHubObject);
+// Axios call to pull top 3 repos from user 
+
+// Then create another variable to store repo object
+
+// Creates standard user data; needs to be nested inside all other api calls 
           var user = {
             userInfo: dbUser.dataValues,
             id: req.session.passport.user,
             isloggedin: req.isAuthenticated(),
-            githubInfo: result
+            githubInfo: gitHubObject,
           }
-          console.log(result);
+          console.log(gitHubObject);
+//  Completes info in profile page
           res.render("profile", user);
           
         });
-<<<<<<< HEAD
       })
-=======
-     })
->>>>>>> 3e8eb6562987dc564eb6364a3207db5e5935b2d3
     }
     else {
       var user = {
