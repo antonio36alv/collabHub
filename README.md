@@ -2,10 +2,19 @@
 
 This is an application that connects professionals with similar interests and skill sets so that they can work together, discover new opportunities and grow their network. 
 
+## Descriptions:
+
+![login](template/img/login.jpg) 
+![signup](template/img/signup.jpg) 
+![choose](template/img/choose.jpg) 
+![profile](template/img/profile.jpg) 
+
+
 ## Link on Heroku: 
 [collabHub](https://collab-hub.herokuapp.com/)
 
 ## Link on gitHub
+
 
 https://github.com/iamha1/collabHub
 
