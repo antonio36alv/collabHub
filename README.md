@@ -5,6 +5,10 @@ This is an application that connects professionals with similar interests and sk
 ## Link on Heroku: 
 [collabHub](https://collab-hub.herokuapp.com/)
 
+## Link on gitHub
+
+https://github.com/iamha1/collabHub
+
 ## Installation: 
 - Run `npm install` and `npm init`
 - Run `dotevn`
