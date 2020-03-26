@@ -1,10 +1,9 @@
 $(document).ready(function(){
-  $('select').material_select();
+  $('#profileSkills').formSelect();
   $("button").on("click",function(){
-    const skills = $("select").val();
+    const skills = $("#profileSkills").val();
     console.log(skills);
   });
-});
 
 console.log("Accounts.js loaded");
 
@@ -115,3 +114,4 @@ $("#confirm-delete").on("click", function (event) {
   }
 });
 */
+});

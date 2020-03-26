@@ -1,7 +1,8 @@
 // This file is in the public/js folder, displaying results to the client.
 
 $(document).ready(function() {
-    $('select').formSelect();
+    $('#skillsSelect').formSelect();
+    
 
     // $("button").on("click",function(){
     //     const skills = $("select").val();
