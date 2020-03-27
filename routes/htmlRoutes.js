@@ -1,6 +1,10 @@
 var db = require("../models");
 const axios = require("axios");
 
+const path = require("path")
+const PUBLIC_DIR = path.resolve(__dirname, "../public")
+const screenshotPath = path.join(PUBLIC_DIR, "/images/login.jpg")
+
 module.exports = function (app) {
 
   app.get("/signup", (req, res) => {
@@ -69,6 +73,10 @@ module.exports = function (app) {
         res.render("profile", dbUser.dataValues)
       })
     }
+  })
+
+  app.get("/screenshot", (req, res) => {
+      res.sendFile(screenshotPath)
   })
 
   app.get('/logout', function (req, res) {
