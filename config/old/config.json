@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "",
+    "password": "process.env.MYSQL_PASS",
     "database": "collabhub",
     "host": "localhost",
     "dialect": "mysql"
@@ -19,3 +19,4 @@
     "dialect": "mysql"
   }
 }
+
